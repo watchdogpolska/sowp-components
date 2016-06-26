@@ -12,6 +12,20 @@ $sowp-color-dark: #4c4c4c !default;
 $sowp-color-dark--accent: #808080 !default;
 $sowp-color-dark--text: #fff !default;
 
+// sowp-vertical-menu>.sowp-vertical-menu__list>ul.sowp-vertical-menu__list>.sowp-vertical-menu__item*5>a>Lorem1
+
+// <div class="sowp-vertical-menu">
+//   <div class="sowp-vertical-menu__list">
+//     <ul class="sowp-vertical-menu__list">
+//       <li class="sowp-vertical-menu__item sowp-vertical-menu__item--active"><a href="">Lorem.</a></li>
+//       <li class="sowp-vertical-menu__item"><a href="">Non?</a></li>
+//       <li class="sowp-vertical-menu__item"><a href="">Rerum!</a></li>
+//       <li class="sowp-vertical-menu__item"><a href="">Nobis!</a></li>
+//       <li class="sowp-vertical-menu__item"><a href="">Nisi!</a></li>
+//     </ul>
+//   </div>
+// </div>
+
 
 // .sowp-vertical-menu {}
 
@@ -19,6 +33,10 @@ $sowp-color-dark--text: #fff !default;
   list-style: none;
   padding: 0;
   margin: 0;
+  display: none;
+  @media(min-width: 600px) {
+    display: block;
+  }
 }
 
 .sowp-vertical-menu__item {
