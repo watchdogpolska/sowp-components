@@ -41,8 +41,8 @@ gulp.task('js', ['js-lint'], () => {
     .pipe(gulp.dest('./dist/'));
 
   const full = merge(
-      project.pipe($.babel()),
-      vendor
+      vendor.pipe($.concat('vendor.js')),
+      project.pipe($.babel()).pipe($.concat('project.js'))
     )
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
