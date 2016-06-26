@@ -94,6 +94,10 @@
   }
 }
 
+.sowp-navbar-header {
+  @include clearfix;
+}
+
 .sowp-navbar-header__left {
   float: left;
 }
