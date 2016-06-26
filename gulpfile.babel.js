@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const browserSync = require('browser-sync').create();
 const merge = require('merge-stream');
 const del = require('del');
 const bowerFiles = require('main-bower-files')();
@@ -9,21 +10,33 @@ const runSequence = require('run-sequence');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
+const reload = browserSync.stream;
+
 gulp.task('scss', ['scss-lint'], () =>
   gulp.src('./assets/stylesheets/_sowp.scss')
       .pipe($.rename({ basename: 'sowp-components' }))
       .pipe($.sass())
       .pipe($.postcss([autoprefixer]))
       .pipe(gulp.dest('./dist/'))
+      .pipe(reload())
       .pipe($.postcss([cssnano]))
       .pipe($.rename({ extname: '.min.css' }))
       .pipe(gulp.dest('./dist/'))
+      .pipe(reload())
 );
 
 gulp.task('scss-lint', () =>
   gulp.src('./assets/stylesheets/**/*.scss')
       .pipe($.scssLint())
 );
+
+gulp.task('serve', () => {
+  browserSync.init({
+    server: {
+      baseDir: ['./docs/', './dist/'],
+    },
+  });
+});
 
 gulp.task('js', ['js-lint'], () => {
   const vendor = gulp.src(bowerFiles);
@@ -34,11 +47,13 @@ gulp.task('js', ['js-lint'], () => {
     .pipe($.sourcemaps.init())
     .pipe($.babel())
     .pipe(gulp.dest('./dist/'))
+    .pipe(reload())
     .pipe($.sourcemaps.init())
     .pipe($.uglify())
     .pipe($.rename({ extname: '.min.js' }))
     .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('./dist/'))
+    .pipe(reload());
 
   const full = merge(
       vendor.pipe($.concat('vendor.js')),
@@ -48,10 +63,12 @@ gulp.task('js', ['js-lint'], () => {
     .pipe($.sourcemaps.init())
     .pipe($.concat('sowp-components.js'))
     .pipe(gulp.dest('./dist/'))
+    .pipe(reload())
     .pipe($.uglify())
     .pipe($.rename({ extname: '.min.js' }))
     .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('./dist/'))
+    .pipe(reload());
 
   return merge(components, full);
 });
