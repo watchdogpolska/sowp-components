@@ -51,8 +51,8 @@
 }
 
 .sowp-card-tab {
-  @include fold($sowp-color-light);
-  background: $sowp-color-light--accent;
+  @include fold($sowp-color-light--accent);
+  background: $sowp-color-light;
   color: $sowp-color-light--text;
 
   display: block;
@@ -62,8 +62,8 @@
 }
 
 .sowp-card-tab--active {
-  @include fold($sowp-color-brand);
-  background: $sowp-color-brand--accent;
+  @include fold($sowp-color-brand--accent);
+  background: $sowp-color-brand;
   color: $sowp-color-brand--text;
 
   padding: 50px 40px;

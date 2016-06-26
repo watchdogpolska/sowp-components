@@ -36,12 +36,14 @@
 
 .sowp-navbar__header {
   background: $sowp-color-dark;
+  color: $sowp-color-dark--text;
 }
 
 .sowp-navbar__nav {
   max-height: 0;
   overflow: hidden;
   background: $sowp-color-dark;
+  color: $sowp-color-dark--text;
   transition: max-height 200ms;
 
   .sowp-navbar.is-expanded & {
@@ -52,7 +54,8 @@
     position: absolute;
     z-index: 1000;
     right: 0;
-    background: $sowp-color-light--accent;
+    background: $sowp-color-brand;
+    color: $sowp-color-brand--text;
   }
 }
 
@@ -62,7 +65,7 @@
 
 .sowp-navbar__toggle {
   .sowp-navbar.is-expanded & {
-    background: $sowp-color-light--accent;
+    background: $sowp-color-brand;
   }
 }
 
@@ -77,15 +80,17 @@
   &:hover,
   &:focus {
     background: $sowp-color-light--accent;
+    color: $white;
+    text-decoration: none;
   }
 }
 
 .sowp-navbar-header__item--highlight {
-  background: $sowp-color-light--accent;
+  background: $sowp-color-brand;
 
   &:hover,
   &:focus {
-    background: lighten($sowp-color-light--accent, 10%);
+    background: lighten($sowp-color-brand, 10%);
   }
 }
 

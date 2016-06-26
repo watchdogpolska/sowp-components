@@ -29,6 +29,10 @@ $sowp-color-dark--text: #fff !default;
   a {
     text-decoration: none;
     color: $black;
+    &:hover, &:focus {
+      color: $sowp-color-brand;
+      text-decoration: none;
+    }
   }
 
   &:first-child {
@@ -38,7 +42,7 @@ $sowp-color-dark--text: #fff !default;
 
 .sowp-vertical-menu__item--active {
   a {
-    color: $sowp-color-brand--accent;
+    color: $sowp-color-brand;
   }
 }
 
@@ -49,7 +53,7 @@ $sowp-color-dark--text: #fff !default;
     display: block;
     width: 100%;
     background: $sowp-color-light;
-    color: $sowp-color-brand--accent;
+    color: $sowp-color-brand;
     font-size: 24px;
     line-height: 1em;
     border: 0;
@@ -67,7 +71,7 @@ $sowp-color-dark--text: #fff !default;
     width: 40px;
     top: 0;
     right: 0;
-    background: $sowp-color-brand--accent;
+    background: $sowp-color-brand;
     pointer-events: none;
   }
 

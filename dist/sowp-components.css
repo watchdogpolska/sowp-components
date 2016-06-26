@@ -33,7 +33,7 @@
 .sowp-card--brand {
   position: relative;
   background: #d72626;
-  color: #000; }
+  color: #fff; }
   .sowp-card--brand::before {
     content: "";
     position: absolute;
@@ -45,7 +45,7 @@
 
 .sowp-card--light {
   position: relative;
-  background: #d72626;
+  background: #f0f0f0;
   color: #4c4c4c; }
   .sowp-card--light::before {
     content: "";
@@ -58,14 +58,14 @@
 
 .sowp-card--dark {
   position: relative;
-  background: #808080;
+  background: #4c4c4c;
   color: #fff; }
   .sowp-card--dark::before {
     content: "";
     position: absolute;
     top: 0;
     right: 0;
-    border: 20px solid #4c4c4c;
+    border: 20px solid #808080;
     border-top-color: #fff;
     border-right-color: #fff; }
 
@@ -87,12 +87,14 @@
   position: relative; }
 
 .sowp-navbar__header {
-  background: #4c4c4c; }
+  background: #4c4c4c;
+  color: #fff; }
 
 .sowp-navbar__nav {
   max-height: 0;
   overflow: hidden;
   background: #4c4c4c;
+  color: #fff;
   -webkit-transition: max-height 200ms;
   transition: max-height 200ms; }
   .sowp-navbar.is-expanded .sowp-navbar__nav {
@@ -102,7 +104,8 @@
       position: absolute;
       z-index: 1000;
       right: 0;
-      background: #d72626; } }
+      background: #d72626;
+      color: #fff; } }
 
 .sowp-navbar__content {
   padding: 20px; }
@@ -191,7 +194,7 @@
 
 .sowp-card-tab {
   position: relative;
-  background: #d72626;
+  background: #f0f0f0;
   color: #4c4c4c;
   display: block;
   margin-top: 20px;
@@ -209,7 +212,7 @@
 .sowp-card-tab--active {
   position: relative;
   background: #d72626;
-  color: #000;
+  color: #fff;
   padding: 50px 40px;
   position: relative;
   top: -20px; }
