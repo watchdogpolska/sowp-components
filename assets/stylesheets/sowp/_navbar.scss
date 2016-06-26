@@ -1,0 +1,163 @@
+// <div class="sowp-navbar">
+//   <div class="sowp-navbar__header sowp-navbar-header">
+//     <div class="sowp-navbar-header__left">
+//       <a href="#" class="sowp-navbar-header__item">EN</a>
+//     </div>
+//     <div class="sowp-navbar-header__right">
+//       <a href="#" class="sowp-navbar-header__item sowp-navbar__toggle">MENU</a>
+//     </div>
+//     <div class="sowp-navbar-header__center">
+//       <a href="#" class="sowp-navbar-header__item sowp-navbar-header__item--highlight">Wspieraj nas</a>
+//     </div>
+//   </div>
+//   <div class="sowp-navbar__nav">
+//     <div class="sowp-navbar__content">
+//       <ul class="sowp-navbar-nav-menu">
+//         <li class="sowp-navbar-nav-menu__item"><a href="#">Lorem.</a></li>
+//         <li class="sowp-navbar-nav-menu__item"><a href="#">Incidunt!</a></li>
+//         <li class="sowp-navbar-nav-menu__item"><a href="#">Esse.</a></li>
+//         <li class="sowp-navbar-nav-menu__item"><a href="#">Nisi.</a></li>
+//         <li class="sowp-navbar-nav-menu__item"><a href="#">Similique.</a></li>
+//         <li class="sowp-navbar-nav-menu__item"><a href="#">Iste!</a></li>
+//       </ul>
+//       <hr class="sowp-navbar-nav__divider" />
+//       <ul class="sowp-navbar-nav-icons">
+//         <li class="sowp-navbar-nav-icons--item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+//         <li class="sowp-navbar-nav-icons--item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+//         <li class="sowp-navbar-nav-icons--item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+//       </ul>
+//     </div>
+//   </div>
+// </div>
+
+.sowp-navbar {
+  position: relative;
+}
+
+.sowp-navbar__header {
+  background: $sowp-color-dark;
+}
+
+.sowp-navbar__nav {
+  max-height: 0;
+  overflow: hidden;
+  background: $sowp-color-dark;
+  transition: max-height 200ms;
+
+  .sowp-navbar.is-expanded & {
+    max-height: 400px;
+  }
+
+  @media(min-width: 600px) {
+    position: absolute;
+    z-index: 1000;
+    right: 0;
+    background: $sowp-color-light--accent;
+  }
+}
+
+.sowp-navbar__content {
+  padding: 20px;
+}
+
+.sowp-navbar__toggle {
+  .sowp-navbar.is-expanded & {
+    background: $sowp-color-light--accent;
+  }
+}
+
+.sowp-navbar-header__item {
+  display: inline-block;
+  text-decoration: none;
+  color: $white;
+  line-height: 80px;
+  padding: 0 20px;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    background: $sowp-color-light--accent;
+  }
+}
+
+.sowp-navbar-header__item--highlight {
+  background: $sowp-color-light--accent;
+
+  &:hover,
+  &:focus {
+    background: lighten($sowp-color-light--accent, 10%);
+  }
+}
+
+.sowp-navbar-header__left {
+  float: left;
+}
+
+.sowp-navbar-header__center {
+  text-align: center;
+}
+
+.sowp-navbar-header__right {
+  float: right;
+}
+
+.sowp-navbar-nav-menu {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.sowp-navbar-nav-menu__item {
+  text-align: center;
+
+  a {
+    color: $white;
+    text-decoration: none;
+    display: block;
+    line-height: 2;
+    text-transform: uppercase;
+  }
+
+  &.active,
+  & a:focus,
+  & a:hover {
+    color: rgba($white, .5);
+  }
+}
+
+
+.sowp-navbar-nav__divider {
+  border: 0;
+  text-align: center;
+  margin-bottom: 40px;
+
+  &::after {
+    content: "";
+    width: 50%;
+    display: inline-block;
+    border-bottom: 1px solid $white;
+  }
+}
+
+.sowp-navbar-nav-icons {
+  display: block;
+  text-align: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sowp-navbar-nav-icons--item {
+  display: inline-block;
+  font-size: 28px;
+  padding: 0 20px;
+
+  a {
+    color: $white;
+
+    &:hover,
+    &:focus {
+      color: rgba($white, .5);
+    }
+  }
+}

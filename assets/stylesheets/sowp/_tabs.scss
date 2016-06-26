@@ -1,0 +1,72 @@
+// <div class="sowp-cards-tabs">
+//   <div class="sowp-cards-tabs__item">
+//     <div class="sowp-card-tab sowp-card-tab--active">
+//       <div class="sowp-cards-tabs__icon">
+//         <i class="fa fa-bars"></i>
+//       </div>
+//       <div class="sowp-cards-tabs__label">
+//         15 minuts
+//       </div>
+//     </div>
+//   </div>
+//   <div class="sowp-cards-tabs__item">
+//     <div class="sowp-card-tab">
+//       <div class="sowp-cards-tabs__icon">
+//         <i class="fa fa-bars"></i>
+//       </div>
+//       <div class="sowp-cards-tabs__label">
+//         15 minuts
+//       </div>
+//     </div>
+//   </div>
+//   <div class="sowp-cards-tabs__item">
+//     <div class="sowp-card-tab">
+//       <div class="sowp-cards-tabs__icon">
+//         <i class="fa fa-bars"></i>
+//       </div>
+//       <div class="sowp-cards-tabs__label">
+//         15 minuts
+//       </div>
+//     </div>
+//   </div>
+//   <div class="sowp-cards-tabs__item">
+//     <div class="sowp-card-tab">
+//       <div class="sowp-cards-tabs__icon">
+//         <i class="fa fa-bars"></i>
+//       </div>
+//       <div class="sowp-cards-tabs__label">
+//         15 minuts
+//       </div>
+//     </div>
+//   </div>
+// </div>
+
+.sowp-cards-tabs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sowp-cards-tabs__item {
+  width: 20%;
+}
+
+.sowp-card-tab {
+  @include fold($sowp-color-light);
+  background: $sowp-color-light--accent;
+  color: $sowp-color-light--text;
+
+  display: block;
+  margin-top: 20px;
+  padding: 40px;
+  font-size: 25px;
+}
+
+.sowp-card-tab--active {
+  @include fold($sowp-color-brand);
+  background: $sowp-color-brand--accent;
+  color: $sowp-color-brand--text;
+
+  padding: 50px 40px;
+  position: relative;
+  top: -20px;
+}

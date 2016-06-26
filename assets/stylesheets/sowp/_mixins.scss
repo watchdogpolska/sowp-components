@@ -1,0 +1,21 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+@mixin fold($color: $sowp-color-brand--accent) {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 20px solid $color;
+    border-top-color: $sowp-page-background;
+    border-right-color: $sowp-page-background;
+  }
+}

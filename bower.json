@@ -1,0 +1,37 @@
+{
+  "name": "sowp-components",
+  "authors": [
+    "Dzakus <Dzakus13@gmail.com>"
+  ],
+  "description": "Base components used for build Siec Obywwatelska website",
+  "main": [
+    "./dist/sowp-components.js",
+    "./dist/sowp-components.css"
+  ],
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "https://github.com/watchdogpolska/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.0.0",
+    "masonry": "^4.1.0"
+  },
+  "overrides": {
+    "outlayer": {
+      "main": [
+        "item.js",
+        "outlayer.js"
+      ]
+    },
+    "jquery": {
+      "main": []
+    }
+  }
+}

@@ -1,0 +1,96 @@
+// <div class="sowp-card sowp-card--primary">
+//   <div class="sowp-card__heading">
+//     <h1>Lorem ipsum dolor.</h1>
+//   </div>
+//   <div class="sowp-card__content">
+//     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!</p>
+//   </div>
+// </div>
+// <div class="sowp-card sowp-card--light">
+//   <div class="sowp-card__content">
+//     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, nisi provident voluptatum nobis dignissimos vel! Doloribus accusamus optio autem dolores adipisci consectetur harum maiores in. Possimus corporis similique vero, facilis.</p>
+//   </div>
+// </div>
+// <div class="sowp-card sowp-card--dark">
+//   <div class="sowp-card__content">
+//     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, nisi provident voluptatum nobis dignissimos vel! Doloribus accusamus optio autem dolores adipisci consectetur harum maiores in. Possimus corporis similique vero, facilis.</p>
+//   </div>
+// </div>
+
+// # With header image
+// <div class="sowp-card sowp-card--light">
+//   <div class="sowp-card__image">
+//     <a href="http://google.com">
+//       <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
+//     </a>
+//   </div>
+//   <div class="sowp-card__content">
+//     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+//   </div>
+// </div>
+
+// .sowp-card {}
+
+.sowp-card__image {
+  a {
+    display: block;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.sowp-card__heading {
+  padding: 20px 20px 30px;
+  font-size: 42px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-size: inherit;
+    margin: 0;
+  }
+
+  &::after {
+    content: "";
+    position: relative;
+    top: 20px;
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: $white;
+  }
+}
+
+.sowp-card__content {
+  padding: 20px;
+
+  .sowp-card__heading + & {
+    padding-top: 0;
+  }
+}
+
+.sowp-card--brand {
+  @include fold($sowp-color-brand);
+  background: $sowp-color-brand--accent;
+  color: $sowp-color-brand--text;
+}
+
+.sowp-card--light {
+  @include fold($sowp-color-light);
+  background: $sowp-color-light--accent;
+  color: $sowp-color-light--text;
+}
+
+.sowp-card--dark {
+  @include fold($sowp-color-dark);
+  background: $sowp-color-dark--accent;
+  color: $sowp-color-dark--text;
+}
+
+

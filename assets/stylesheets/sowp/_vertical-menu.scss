@@ -1,0 +1,77 @@
+$sowp-page-background: #fff !default;
+
+$sowp-color-brand: #7a1a1a !default;
+$sowp-color-brand--accent: #d72626 !default;
+$sowp-color-brand--text: #000 !default;
+
+$sowp-color-light: #f0f0f0 !default;
+$sowp-color-light--accent: #d72626 !default;
+$sowp-color-light--text: #4c4c4c !default;
+
+$sowp-color-dark: #4c4c4c !default;
+$sowp-color-dark--accent: #808080 !default;
+$sowp-color-dark--text: #fff !default;
+
+
+// .sowp-vertical-menu {}
+
+.sowp-vertical-menu__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sowp-vertical-menu__item {
+  display: inline-block;
+  font-size: 23px;
+  padding: 10px 20px;
+
+  a {
+    text-decoration: none;
+    color: $black;
+  }
+
+  &:first-child {
+    padding-left: 0;
+  }
+}
+
+.sowp-vertical-menu__item--active {
+  a {
+    color: $sowp-color-brand--accent;
+  }
+}
+
+.sowp-vertical-menu__select {
+  position: relative;
+
+  select {
+    display: block;
+    width: 100%;
+    background: $sowp-color-light;
+    color: $sowp-color-brand--accent;
+    font-size: 24px;
+    line-height: 1em;
+    border: 0;
+    padding: 5px;
+  }
+
+  &::after {
+    content: "V";
+    position: absolute;
+    color: $white;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    height: 100%;
+    width: 40px;
+    top: 0;
+    right: 0;
+    background: $sowp-color-brand--accent;
+    pointer-events: none;
+  }
+
+  @media(min-width: 600px) {
+    display: none;
+  }
+}
