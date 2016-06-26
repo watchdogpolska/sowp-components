@@ -121,12 +121,19 @@
   padding: 0 20px;
   text-transform: uppercase; }
   .sowp-navbar-header__item:hover, .sowp-navbar-header__item:focus {
-    background: #d72626; }
+    background: #808080;
+    color: #fff;
+    text-decoration: none; }
 
 .sowp-navbar-header__item--highlight {
   background: #d72626; }
   .sowp-navbar-header__item--highlight:hover, .sowp-navbar-header__item--highlight:focus {
     background: #e05050; }
+
+.sowp-navbar-header::after {
+  content: "";
+  clear: both;
+  display: table; }
 
 .sowp-navbar-header__left {
   float: left; }
@@ -263,3 +270,56 @@
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     border-bottom: 20px solid #fff; }
+
+.sowp-vertical-menu__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none; }
+  @media (min-width: 600px) {
+    .sowp-vertical-menu__list {
+      display: block; } }
+
+.sowp-vertical-menu__item {
+  display: inline-block;
+  font-size: 23px;
+  padding: 10px 20px; }
+  .sowp-vertical-menu__item a {
+    text-decoration: none;
+    color: #000; }
+    .sowp-vertical-menu__item a:hover, .sowp-vertical-menu__item a:focus {
+      color: #d72626;
+      text-decoration: none; }
+  .sowp-vertical-menu__item:first-child {
+    padding-left: 0; }
+
+.sowp-vertical-menu__item--active a {
+  color: #d72626; }
+
+.sowp-vertical-menu__select {
+  position: relative; }
+  .sowp-vertical-menu__select select {
+    display: block;
+    width: 100%;
+    background: #f0f0f0;
+    color: #d72626;
+    font-size: 24px;
+    line-height: 1em;
+    border: 0;
+    padding: 5px; }
+  .sowp-vertical-menu__select::after {
+    content: "V";
+    position: absolute;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    height: 100%;
+    width: 40px;
+    top: 0;
+    right: 0;
+    background: #d72626;
+    pointer-events: none; }
+  @media (min-width: 600px) {
+    .sowp-vertical-menu__select {
+      display: none; } }
