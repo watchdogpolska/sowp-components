@@ -1,0 +1,33 @@
+.sowp-scroll-to-top {
+  display: block;
+  position: relative;
+  background: #D72626;
+  width: 80px;
+  color: $white;
+  font-size: 18px;
+  padding: 10px 20px ;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 80px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #D72626;
+  }
+
+  &:hover,
+  &:focus {
+    color: $white;
+    text-decoration: none;
+    opacity: .9;
+  }
+}
