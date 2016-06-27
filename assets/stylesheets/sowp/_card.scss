@@ -13,7 +13,7 @@
 }
 
 .sowp-card__heading {
-  padding: 20px 20px 30px;
+  padding: 40px 40px 30px;
   font-size: 42px;
 
   h1,
@@ -37,7 +37,7 @@
 }
 
 .sowp-card__content {
-  padding: 20px;
+  padding: 40px;
 
   .sowp-card__heading + & {
     padding-top: 0;
@@ -48,18 +48,70 @@
   @include fold($sowp-color-brand--accent);
   background: $sowp-color-brand;
   color: $sowp-color-brand--text;
+
+  a {
+    color: $sowp-color-brand--link;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      color: $sowp-color-brand--link-hover;
+      text-decoration: underline;
+    }
+  }
+
 }
 
 .sowp-card--light {
   @include fold($sowp-color-light--accent);
   background: $sowp-color-light;
   color: $sowp-color-light--text;
+
+  a {
+    color: $sowp-color-light--link;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $sowp-color-light--link-hover;
+      text-decoration: underline;
+    }
+  }
+}
+
+.sowp-card--medium {
+  @include fold($sowp-color-medium--accent);
+  background: $sowp-color-medium;
+  color: $sowp-color-medium--text;
+
+  a {
+    color: $sowp-color-medium--link;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $sowp-color-medium--link-hover;
+      text-decoration: underline;
+    }
+  }
 }
 
 .sowp-card--dark {
   @include fold($sowp-color-dark--accent);
   background: $sowp-color-dark;
   color: $sowp-color-dark--text;
+
+  a {
+    color: $sowp-color-dark--link;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      color: $sowp-color-dark--link-hover;
+      text-decoration: underline;
+    }
+  }
 }
+
 
 

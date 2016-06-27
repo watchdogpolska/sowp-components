@@ -6,11 +6,23 @@ $sowp-page-background: #fff !default;
 $sowp-color-brand: #d72626 !default;
 $sowp-color-brand--accent: #7a1a1a !default;
 $sowp-color-brand--text: #fff !default;
+$sowp-color-brand--link: #fff !default;
+$sowp-color-brand--link-hover: darken($white, 10%) !default;
 
 $sowp-color-light: #f0f0f0 !default;
 $sowp-color-light--accent: #808080 !default;
 $sowp-color-light--text: #4c4c4c !default;
+$sowp-color-light--link: #d72626 !default;
+$sowp-color-light--link-hover: #d72626 !default;
+
+$sowp-color-medium: #d9d9d9 !default;
+$sowp-color-medium--accent: #808080 !default;
+$sowp-color-medium--text: #4c4c4c !default;
+$sowp-color-medium--link: #d72626 !default;
+$sowp-color-medium--link-hover: #d72626 !default;
 
 $sowp-color-dark: #4c4c4c !default;
 $sowp-color-dark--accent: #808080 !default;
 $sowp-color-dark--text: #fff !default;
+$sowp-color-dark--link: #fff !default;
+$sowp-color-dark--link-hover: #d72626 !default;
