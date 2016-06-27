@@ -1,16 +1,19 @@
-const gulp = require('gulp');
-const browserSync = require('browser-sync').create();
-const merge = require('merge-stream');
-const del = require('del');
-const bowerFiles = require('main-bower-files')();
-const $ = require('gulp-load-plugins')();
-const runSequence = require('run-sequence');
+import gulp from 'gulp';
+import browserSync from 'browser-sync';
+import merge from 'merge-stream';
+import del from 'del';
+import mainBowerFiles from 'main-bower-files';
+import gulpLoadPlugins from 'gulp-load-plugins';
+import runSequence from 'run-sequence';
 
 // Post CSS plugins
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 
-const reload = browserSync.stream;
+const $ = gulpLoadPlugins();
+const bowerFiles = mainBowerFiles();
+const bs = browserSync.create();
+const reload = bs.stream;
 
 gulp.task('scss', ['scss-lint'], () =>
   gulp.src('./assets/stylesheets/_sowp.scss')
@@ -30,8 +33,8 @@ gulp.task('scss-lint', () =>
       .pipe($.scssLint())
 );
 
-gulp.task('serve', () => {
-  browserSync.init({
+gulp.task('server', () => {
+  bs.init({
     server: {
       baseDir: ['./docs/', './dist/'],
     },
@@ -87,4 +90,4 @@ gulp.task('watch', () => {
 
 gulp.task('build', cb => runSequence('clean', ['js', 'scss'], cb));
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['server', 'build', 'watch']);
