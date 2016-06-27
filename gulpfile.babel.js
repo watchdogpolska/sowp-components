@@ -1,10 +1,12 @@
 import gulp from 'gulp';
+
 import browserSync from 'browser-sync';
 import merge from 'merge-stream';
 import del from 'del';
 import mainBowerFiles from 'main-bower-files';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import runSequence from 'run-sequence';
+import sherpa from 'style-sherpa';
 
 // Post CSS plugins
 import autoprefixer from 'autoprefixer';
@@ -36,7 +38,7 @@ gulp.task('scss-lint', () =>
 gulp.task('server', () => {
   bs.init({
     server: {
-      baseDir: ['./docs/', './dist/'],
+      baseDir: ['./dist/'],
     },
   });
 });
@@ -81,13 +83,24 @@ gulp.task('js-lint', () =>
       .pipe($.eslint())
 );
 
+gulp.task('styleguide', (done) =>
+  sherpa('./assets/styleguide/index.md', {
+    output: './dist/index.html',
+    template: './assets/styleguide/template.html',
+  }, () => {
+    bs.reload();
+    done();
+  })
+);
+
 gulp.task('clean', () => del(['./dist/**/*']));
 
 gulp.task('watch', () => {
   gulp.watch('./assets/stylesheets/**/*.scss', ['scss']);
   gulp.watch('./assets/javascript/**/*.js', ['js']);
+  gulp.watch('./assets/styleguide/**/*', ['styleguide']).on('change', bs.reload);
 });
 
-gulp.task('build', cb => runSequence('clean', ['js', 'scss'], cb));
+gulp.task('build', cb => runSequence('clean', ['styleguide', 'js', 'scss'], cb));
 
-gulp.task('default', ['server', 'build', 'watch']);
+gulp.task('default', cb => runSequence('build', ['server', 'watch'], cb));
