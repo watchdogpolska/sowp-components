@@ -5,8 +5,8 @@
   ],
   "description": "Base components used for build Siec Obywwatelska website",
   "main": [
-    "./dist/sowp-components.js",
-    "./dist/sowp-components.css"
+    "./dist/js/sowp-components.js",
+    "./dist/css/sowp-components.css"
   ],
   "moduleType": [],
   "license": "MIT",

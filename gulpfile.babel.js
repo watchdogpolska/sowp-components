@@ -20,11 +20,11 @@ gulp.task('scss', ['scss-lint'], () =>
       .pipe($.rename({ basename: 'sowp-components' }))
       .pipe($.sass())
       .pipe($.postcss([autoprefixer]))
-      .pipe(gulp.dest('./dist/'))
+      .pipe(gulp.dest('./dist/css/'))
       .pipe(reload())
       .pipe($.postcss([cssnano]))
       .pipe($.rename({ extname: '.min.css' }))
-      .pipe(gulp.dest('./dist/'))
+      .pipe(gulp.dest('./dist/css/'))
       .pipe(reload())
 );
 
@@ -49,13 +49,13 @@ gulp.task('js', ['js-lint'], () => {
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.babel())
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest('./dist/js/'))
     .pipe(reload())
     .pipe($.sourcemaps.init())
     .pipe($.uglify())
     .pipe($.rename({ extname: '.min.js' }))
     .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest('./dist/js/'))
     .pipe(reload());
 
   const full = merge(
@@ -65,12 +65,12 @@ gulp.task('js', ['js-lint'], () => {
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.concat('sowp-components.js'))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest('./dist/js/'))
     .pipe(reload())
     .pipe($.uglify())
     .pipe($.rename({ extname: '.min.js' }))
     .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest('./dist/js/'))
     .pipe(reload());
 
   return merge(components, full);
