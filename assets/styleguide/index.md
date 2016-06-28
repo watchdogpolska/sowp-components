@@ -7,7 +7,17 @@
 ## SCSS
 
 ## Bower
-Problem z masonry
+Z powodu błędów w bibliotece Masonry wymagane jest wykorzystanie wcześniej skompilowanej werjsi.
+W tym celu do ``bower.json`` należy dopisać
+```json
+  "overrides": {
+    "masonry": {
+      "main": "./dist/masonry.pkgd.js",
+      "dependencies": {
+      }
+    }
+  }
+```
 
 # Card
 
