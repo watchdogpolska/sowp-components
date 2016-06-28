@@ -1,0 +1,152 @@
+$sowp-top-menu-bg: $sowp-color-brand;
+$sowp-top-menu-item: $sowp-color-brand--link;
+$sowp-top-menu-item-bg: $sowp-color-brand;
+$sowp-top-menu-item-bg--hover: $sowp-color-brand--accent;
+$sowp-top-menu-caret: $black;
+// Experimental
+$sowp-top-menu-support-second-level: false;
+
+
+.sowp-top-menu {
+  @include clearfix;
+  background: $sowp-color-brand;
+}
+
+.sowp-top-menu-section {
+  &,
+  & ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    position: relative;
+    background: $sowp-top-menu-item-bg;
+
+    &.hover > a,
+    a:hover {
+      background: $sowp-top-menu-item-bg--hover;
+    }
+  }
+
+  .has-children {
+    // padding-right: 2em;
+
+    &::after {
+      content: "";
+      position: absolute;
+      border-top: 6px solid $sowp-top-menu-caret;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      display: inline-block;
+      top: 17px;
+      right: 10px;
+    }
+  }
+
+  a {
+    color: $sowp-top-menu-item;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+  }
+
+  ul {
+    padding-left: 1em;
+  }
+
+  @media(min-width: 600px) {
+    ul {
+      padding-left: 0;
+    }
+
+    .has-children {
+      padding-right: 2em;
+    }
+
+    li {
+      &:hover,
+      &.hover {
+        background: $sowp-top-menu-item-bg--hover;
+      }
+    }
+
+    > li {
+      position: relative;
+      display: inline-block;
+
+      &:hover,
+      &.hover {
+
+        > ul {
+          display: block;
+        }
+      }
+    }
+    // dropdown
+    > li {
+      > ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+      }
+    }
+
+    @if $sowp-top-menu-support-second-level {
+      > li {
+        > ul {
+          li {
+            ul {
+              display: none;
+            }
+            &:hover,
+            &.hover {
+              > ul {
+                display: block;
+                position: absolute;
+                top: 0;
+                // left: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.sowp-top-menu-section--space-between {
+  > ul {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media(min-width: 600px) {
+  .sowp-top-menu-section--right {
+    float: right;
+    @if $sowp-top-menu-support-second-level {
+      > li > ul li {
+        &:hover,
+        &.hover {
+          > ul {
+            right: 100%;
+          }
+        }
+      }
+    }
+  }
+  .sowp-top-menu-section--left {
+    @if $sowp-top-menu-support-second-level {
+      > li > ul li {
+        &:hover,
+        &.hover {
+          > ul {
+            left: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -321,39 +321,95 @@ Problem z masonry
 
 
 # Top menu
-````html_example
-<div class="sowp-navbar">
-  <div class="sowp-navbar__header sowp-navbar-header">
-    <div class="sowp-navbar-header__left">
-      <a href="#" class="sowp-navbar-header__item">EN</a>
-    </div>
-    <div class="sowp-navbar-header__right">
-      <a href="#" class="sowp-navbar-header__item sowp-navbar__toggle">MENU</a>
-    </div>
-    <div class="sowp-navbar-header__center">
-      <a href="#" class="sowp-navbar-header__item sowp-navbar-header__item--highlight">Wspieraj nas</a>
-    </div>
-  </div>
-  <div class="sowp-navbar__nav">
-    <div class="sowp-navbar__content">
-      <ul class="sowp-navbar-nav-menu">
-        <li class="sowp-navbar-nav-menu__item"><a href="#">Lorem.</a></li>
-        <li class="sowp-navbar-nav-menu__item"><a href="#">Incidunt!</a></li>
-        <li class="sowp-navbar-nav-menu__item"><a href="#">Esse.</a></li>
-        <li class="sowp-navbar-nav-menu__item"><a href="#">Nisi.</a></li>
-        <li class="sowp-navbar-nav-menu__item"><a href="#">Similique.</a></li>
-        <li class="sowp-navbar-nav-menu__item"><a href="#">Iste!</a></li>
+````html
+<nav class="sowp-top-menu">
+  <ul class="sowp-top-menu-section sowp-top-menu-section--right">
+    <li>
+      <a href="">Lorem.</a>
+      <ul>
+        <li><a href="">Lorem.</a></li>
+        <li><a href="">Eligendi?</a></li>
+        <li><a href="">Dolorem?</a></li>
+        <li><a href="">Mollitia.</a></li>
       </ul>
-      <hr class="sowp-navbar-nav__divider" />
-      <ul class="sowp-navbar-nav-icons">
-        <li class="sowp-navbar-nav-icons--item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-        <li class="sowp-navbar-nav-icons--item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-        <li class="sowp-navbar-nav-icons--item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-      </ul>
-    </div>
-  </div>
-</div>
+    </li>
+    <li>
+      <a href="">Amet.</a>
+    </li>
+    [..]
+  </ul>
+  <ul class="sowp-top-menu-section sowp-top-menu-section--left">
+    <li>
+      <a href="">Praesentium.</a>
+    </li>
+    <li>
+      <a href="">Neque!</a>
+      [...]
+    </li>
+  </ul>
+</nav>
+
 ````
+<nav class="sowp-top-menu">
+  <ul class="sowp-top-menu-section sowp-top-menu-section--right">
+    <li>
+      <a href="#">Lorem.</a>
+      <ul>
+        <li><a href="#">Lorem.</a></li>
+        <li><a href="#">Eligendi?</a></li>
+        <li><a href="#">Dolorem?</a></li>
+        <li><a href="#">Mollitia.</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Amet.</a>
+    </li>
+    <li>
+      <a href="#">Et.</a>
+      <ul>
+        <li><a href="">Lorem.</a></li>
+        <li><a href="#">Sed?</a></li>
+        <li><a href="#">Cupiditate!</a></li>
+        <li><a href="#">Nobis.</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Voluptate.</a>
+      <ul>
+        <li><a href="#">Lorem.</a></li>
+        <li><a href="#">Ut.</a></li>
+        <li><a href="#">At!</a></li>
+        <li><a href="#">Fuga.</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Voluptatum.</a>
+      <ul>
+        <li><a href="#">Lorem.</a></li>
+        <li><a href="#">Hic.</a></li>
+        <li><a href="#">Sed?</a></li>
+        <li><a href="#">Reiciendis.</a></li>
+      </ul>
+    </li>
+  </ul>
+  <ul class="sowp-top-menu-section sowp-top-menu-section--left">
+    <li>
+      <a href="">Praesentium.</a>
+    </li>
+    <li>
+      <a href="#">Neque!</a>
+      <ul>
+        <li><a href="#">Lorem.</a></li>
+        <li><a href="#">Cupiditate.</a></li>
+        <li><a href="#">Excepturi.</a></li>
+        <li><a href="#">Ut?</a></li>
+        <li><a href="#">Ipsum.</a></li>
+        <li><a href="#">Quam!</a></li>
+        <li><a href="#">Neque.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
