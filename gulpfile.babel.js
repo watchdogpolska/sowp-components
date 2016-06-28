@@ -83,6 +83,25 @@ gulp.task('js-lint', () =>
       .pipe($.eslint())
 );
 
+gulp.task('iconfont-gen', () => {
+  const fontName = 'sowp';
+  return gulp.src(['./assets/icons/*.svg'])
+    .pipe($.iconfontCss({
+      fontName,
+      path: 'scss',
+      targetPath: '../stylesheets/sowp/_icons_generated.scss',
+      fontPath: '../fonts/',
+      cssClass: 'isowp',
+    }))
+    .pipe($.iconfont({
+      fontName,
+      formats: ['svg', 'ttf', 'eot', 'woff', 'woff2'],
+    }))
+    .pipe(gulp.dest('./assets/fonts/'));
+});
+
+gulp.task('iconfont', () => gulp.src('./assets/fonts/*').pipe(gulp.dest('./dist/fonts/')));
+
 gulp.task('styleguide', (done) =>
   sherpa('./assets/styleguide/index.md', {
     output: './dist/index.html',
@@ -97,10 +116,18 @@ gulp.task('clean', () => del(['./dist/**/*']));
 
 gulp.task('watch', () => {
   gulp.watch('./assets/stylesheets/**/*.scss', ['scss']);
+  gulp.watch('./assets/icons/**/*.svg', cb => runSequence('iconfont-gen', 'scss', cb));
   gulp.watch('./assets/javascript/**/*.js', ['js']);
   gulp.watch('./assets/styleguide/**/*', ['styleguide']).on('change', bs.reload);
 });
 
-gulp.task('build', cb => runSequence('clean', ['styleguide', 'js', 'scss'], cb));
+gulp.task('build', cb =>
+  runSequence(
+    'clean',
+    'iconfont-gen',
+    ['iconfont', 'styleguide', 'js', 'scss'],
+    cb
+  )
+);
 
 gulp.task('default', cb => runSequence('build', ['server', 'watch'], cb));

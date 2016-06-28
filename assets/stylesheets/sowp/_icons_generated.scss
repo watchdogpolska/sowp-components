@@ -1,0 +1,56 @@
+@font-face {
+	font-family: "sowp";
+	src: url('../fonts/sowp.eot');
+	src: url('../fonts/sowp.eot?#iefix') format('eot'),
+		url('../fonts/sowp.woff2') format('woff2'),
+		url('../fonts/sowp.woff') format('woff'),
+		url('../fonts/sowp.ttf') format('truetype'),
+		url('../fonts/sowp.svg#sowp') format('svg');
+}
+
+@mixin isowp-styles {
+	font-family: "sowp";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+}
+
+%isowp {
+	@include isowp-styles;
+}
+
+@function isowp-char($filename) {
+	$char: "";
+
+	@if $filename == circle-left {
+		$char: "\E001";
+	}
+	@if $filename == circle-right {
+		$char: "\E002";
+	}
+
+	@return $char;
+}
+
+@mixin isowp($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %isowp;
+		} @else {
+			@include isowp-styles;
+		}
+		content: isowp-char($filename);
+	}
+}
+
+.isowp-circle-left {
+	@include isowp(circle-left);
+}
+.isowp-circle-right {
+	@include isowp(circle-right);
+}

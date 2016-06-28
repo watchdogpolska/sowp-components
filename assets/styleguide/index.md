@@ -433,6 +433,31 @@ Problem z masonry
 ````
 
 
+
+# Icons
+<table id="icon-table">
+  <td>
+    <div class="preview">
+      <i class="isowp-circle-left"></i>
+    </div>
+    <label></label>
+```
+<i class="isowp-circle-left"></i>
+
+```
+  </td>
+  <td>
+    <div class="preview">
+      <i class="isowp-circle-right"></i>
+    </div>
+    <label></label>
+````
+<i class="isowp-circle-right"></i>
+````
+  </td>
+</table>
+
+
 # Variables
 
 
