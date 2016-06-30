@@ -19,6 +19,8 @@ W tym celu do ``bower.json`` należy dopisać
   }
 ```
 
+
+
 # Card
 
 ##  Style
@@ -86,10 +88,35 @@ W tym celu do ``bower.json`` należy dopisać
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
       </div>
     </div>
-
   </div>
 </div>
 ````
+
+
+
+# Bg
+
+```html_example
+<div class="row">
+  <div class="col-md-4">
+    <div class="sowp-bg sowp-bg--brand">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="sowp-bg sowp-bg--light">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, nisi provident voluptatum nobis dignissimos vel! Doloribus accusamus optio autem dolores adipisci consectetur harum maiores in. Possimus corporis similique vero, facilis.</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="sowp-bg sowp-bg--dark">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, nisi provident voluptatum nobis dignissimos vel! Doloribus accusamus optio autem dolores adipisci consectetur harum maiores in. Possimus corporis similique vero, facilis.</p>
+    </div>
+  </div>
+</div>
+```
+
+
 
 
 # Masonry's Grid
@@ -541,6 +568,88 @@ W tym celu do ``bower.json`` należy dopisać
 </div>
 
 
+
+
+# Łączenie elementów
+
+Elementy mogą być łączone, aby budować bardziej złożone elementy.
+
+````html_example
+<h1>Rzodkiewka pomarańczowa</h1>
+<div class="sowp-cards-tabs">
+  <div class="sowp-cards-tabs__item">
+    <div class="sowp-card-tab sowp-card-tab--active">
+      <div class="sowp-cards-tabs__icon">
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="sowp-cards-tabs__label">
+        15 minuts
+      </div>
+    </div>
+  </div>
+  <div class="sowp-cards-tabs__item">
+    <div class="sowp-card-tab">
+      <div class="sowp-cards-tabs__icon">
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="sowp-cards-tabs__label">
+        15 minuts
+      </div>
+    </div>
+  </div>
+  <div class="sowp-cards-tabs__item">
+    <div class="sowp-card-tab">
+      <div class="sowp-cards-tabs__icon">
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="sowp-cards-tabs__label">
+        15 minuts
+      </div>
+    </div>
+  </div>
+  <div class="sowp-cards-tabs__item">
+    <div class="sowp-card-tab">
+      <div class="sowp-cards-tabs__icon">
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="sowp-cards-tabs__label">
+        15 minuts
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sowp-bg sowp-bg--brand">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!</p>
+</div>
+<div class="sowp-tabs-list">
+  <div class="sowp-tabs-list__item is-expanded" id="tab-1">
+    <div class="sowp-tabs-list__item-heading">Lorem ipsum dolor.</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>[...]</p>
+    </div>
+  </div>
+  <div class="sowp-tabs-list__item" id="tab-2">
+    <div class="sowp-tabs-list__item-heading">Lorem ipsum dolor.</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>[...]</p>
+    </div>
+  </div>
+  <div class="sowp-tabs-list__item" id="tab-3">
+    <div class="sowp-tabs-list__item-heading">Ratione, officiis illo.</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>[...]</p>
+    </div>
+  </div>
+  <div class="sowp-tabs-list__item" id="tab-4">
+    <div class="sowp-tabs-list__item-heading">Eveniet, necessitatibus, rerum?</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>[...]</p>
+    </div>
+  </div>
+</div>
+.
+
+````
 
 
 # Variables
