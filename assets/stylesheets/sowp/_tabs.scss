@@ -1,6 +1,7 @@
 .sowp-cards-tabs {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
 .sowp-cards-tabs__item {
@@ -24,6 +25,4 @@
   color: $sowp-color-brand--text;
 
   padding: 50px 40px;
-  position: relative;
-  top: -20px;
 }
