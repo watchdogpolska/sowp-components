@@ -1,5 +1,6 @@
 .sowp-card {
   padding: 0;
+  margin-bottom: 40px;
 }
 
 .sowp-card__image {
@@ -66,5 +67,6 @@
   @extend .sowp-bg--dark;
 }
 
-
-
+.sowp-card--no-margin {
+  margin-bottom: 0;
+}
