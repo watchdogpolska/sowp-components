@@ -468,6 +468,81 @@ W tym celu do ``bower.json`` należy dopisać
 </table>
 
 
+
+
+# Tabs list
+
+````html
+<div class="sowp-tabs-list">
+  <div class="sowp-tabs-list__item is-expanded" id="tab-1">
+    <div class="sowp-tabs-list__item-heading">Lorem ipsum dolor.</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>[...]</p>
+    </div>
+  </div>
+  <div class="sowp-tabs-list__item" id="tab-2">
+    <div class="sowp-tabs-list__item-heading">Lorem ipsum dolor.</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>[...]</p>
+    </div>
+  </div>
+  <div class="sowp-tabs-list__item" id="tab-3">
+    <div class="sowp-tabs-list__item-heading">Ratione, officiis illo.</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>[...]</p>
+    </div>
+  </div>
+  <div class="sowp-tabs-list__item" id="tab-4">
+    <div class="sowp-tabs-list__item-heading">Eveniet, necessitatibus, rerum?</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>[...]</p>
+    </div>
+  </div>
+</div>
+
+````
+<div class="sowp-tabs-list">
+  <div class="sowp-tabs-list__item is-expanded" id="tab-1">
+    <div class="sowp-tabs-list__item-heading">Lorem ipsum dolor.</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium saepe, velit laudantium repellat. Optio animi aperiam molestias, eius deserunt, quis ex quaerat earum sunt maiores consequuntur quo porro dolores unde.</p>
+    </div>
+  </div>
+  <div class="sowp-tabs-list__item" id="tab-2">
+    <div class="sowp-tabs-list__item-heading">Lorem ipsum dolor.</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla culpa ipsa, maiores, totam expedita non. Eaque ratione porro debitis consectetur atque mollitia, quo doloremque reprehenderit adipisci itaque! Explicabo, fugit, repellendus.</p>
+      <p>Doloribus maxime molestiae debitis illum adipisci, consectetur minus ex facilis officiis vero, obcaecati modi. Quam non architecto, inventore quae saepe ipsam quis eveniet accusantium, eaque et pariatur sit perspiciatis, aperiam!</p>
+      <p>Est error accusamus cum repellendus quo eos voluptates delectus corrupti nobis, deserunt a blanditiis dolore sunt voluptatibus pariatur, enim obcaecati fugiat quae, dolores harum. Illum, aut similique eos minus dolores.</p>
+      <p>Veniam nesciunt similique voluptas nobis accusantium voluptates fugiat ad officiis! Magni unde vitae quos nulla laborum error, ipsa blanditiis in, enim ab neque voluptatibus sed id molestias veniam debitis aperiam?</p>
+      <p>Vitae explicabo veniam, dolore magnam numquam placeat harum, nihil provident aliquam sint aliquid consequuntur, nemo iure qui illum? Quibusdam eius delectus sapiente deleniti totam doloremque magnam dolor necessitatibus sint. Qui!</p>
+    </div>
+  </div>
+  <div class="sowp-tabs-list__item" id="tab-3">
+    <div class="sowp-tabs-list__item-heading">Ratione, officiis illo.</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic labore rem commodi odio debitis aperiam iure, ipsam animi delectus laboriosam, architecto, aut, cumque facilis corporis molestias? Hic provident sint dignissimos.</p>
+      <p>Voluptatem ut tempore magni facere? Laborum odio, quasi eligendi suscipit quod sunt, aliquam culpa veniam numquam quisquam quidem cumque, inventore optio nostrum voluptatibus rem, necessitatibus voluptate ab cum explicabo doloribus.</p>
+      <p>Quidem, tenetur, accusantium. Nulla dolorem ipsa minima earum facere doloribus soluta error a nobis, at ut qui ullam deserunt inventore quisquam dignissimos obcaecati dolores impedit quam rerum, facilis amet vitae!</p>
+      <p>Enim omnis, accusantium! Accusantium dolorem obcaecati, maiores, iste excepturi temporibus aut. Culpa animi alias earum cupiditate totam laborum consectetur debitis eligendi, harum eos mollitia, consequuntur nobis. Ut est laudantium unde.</p>
+      <p>Natus delectus vero similique corporis ullam aspernatur odio culpa numquam dicta! Labore aliquid voluptatum dolores, quidem reiciendis obcaecati illum sint. Quasi quos repellat labore reiciendis odit, ut voluptatibus perferendis consectetur!</p>
+    </div>
+  </div>
+  <div class="sowp-tabs-list__item" id="tab-4">
+    <div class="sowp-tabs-list__item-heading">Eveniet, necessitatibus, rerum?</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium rerum deleniti iste quae, provident quo quis, tempore magni, fugiat laborum consequuntur voluptatem ea laboriosam recusandae perspiciatis! Sunt asperiores quos earum!</p>
+      <p>Quisquam dolorem, debitis eos ut sit accusantium molestiae veniam adipisci veritatis doloribus nulla laborum, exercitationem tenetur esse porro dolore iste inventore nihil ducimus numquam quas eius. Earum, delectus dolorem alias!</p>
+      <p>Et sit blanditiis numquam tempora doloribus vitae, nulla, corrupti reprehenderit accusantium maiores. Cupiditate vel fugiat ullam nam autem voluptatibus iusto? Ut, deserunt, numquam! Debitis doloremque repellendus perspiciatis non libero quas?</p>
+      <p>Voluptatibus expedita totam quod eius voluptates, numquam eum illum sit autem harum sunt molestiae quaerat velit blanditiis impedit eaque tempora aliquam quidem cupiditate quas debitis iure ipsa, facere corrupti dignissimos?</p>
+      <p>Minima nulla beatae culpa accusamus est accusantium corporis reprehenderit nam doloribus id! Soluta tenetur cum id quisquam odio ad vel perferendis iusto itaque ut assumenda repellendus, ipsam cumque totam expedita!</p>
+    </div>
+  </div>
+</div>
+
+
+
+
 # Variables
 
 

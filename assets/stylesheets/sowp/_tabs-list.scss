@@ -1,0 +1,57 @@
+$sowp-tab-padding: 40px !default;
+$sowp-tab-bg: #d9d9d9 !default;
+$sowp-tab-bg--expanded: #f0f0f0 !default;
+$sowp-tab-color: #4c4c4c !default;
+$sowp-tab-color--expanded: #d72626 !default;
+$sowp-tab-body-bg--expanded: #f0f0f0 !default;
+$sowp-tab-body-color--expanded: #4c4c4c !default;
+
+
+// .sowp-tab-list {}
+
+.sowp-tabs-list__item-heading {
+  // for open/close indicator represented as triangle
+  position: relative;
+  background: $sowp-tab-bg;
+  color: $sowp-tab-color;
+  cursor: pointer;
+
+  &::after {
+    content: "V";
+    position: absolute;
+    top: $sowp-tab-padding;
+    right: $sowp-tab-padding;
+    height: 1em;
+    line-height: 1em;
+    width: 1em;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .sowp-tabs-list__item.is-expanded & {
+    background: $sowp-tab-bg--expanded;
+    color: $sowp-tab-color--expanded;
+
+    &::after {
+      transform: rotateZ(180deg);
+    }
+  }
+
+  border-bottom: 2px solid $white;
+}
+
+.sowp-tabs-list__item-body {
+  background: $sowp-tab-body-bg--expanded;
+  color: $sowp-tab-body-color--expanded;
+  display: none;
+  border-bottom: 2px solid $white;
+
+  .sowp-tab.is-expanded & {
+    display: block;
+  }
+}
+
+.sowp-tabs-list__item-heading,
+.sowp-tabs-list__item-body {
+  padding: $sowp-tab-padding;
+}
