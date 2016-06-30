@@ -1,0 +1,88 @@
+$sowp-checkbox-border: #4c4c4c;
+$sowp-checkbox-border--active: #d72626;
+$sowp-checkbox-dot: #d72626;
+
+.checkbox,
+.radio {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  label,
+  .label {
+    min-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+  }
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.checkbox, .checkbox-inline, .radio, .radio-inline {
+  input[type="checkbox"],
+   input[type="radio"] {
+    display: none;
+
+    + label {
+      position: relative;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        border: .1em solid $sowp-checkbox-border;
+        vertical-align: -.4em;
+        margin-left: -20px;
+        margin-right: .25em;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: .37em;
+        display: block;
+        width: .75em;
+        height: .75em;
+        background: $sowp-checkbox-border--active;
+        top: .37em;
+        opacity: 0;
+      }
+    }
+
+    &:checked + label {
+
+      &:before {
+        border-color: $sowp-checkbox-dot;
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+}
+
+.radio,
+.radio-inline {
+  input[type="radio"],
+   input[type="radio"] {
+
+    + label::before {
+      border-radius: 1em;
+    }
+
+    + label::after {
+      border-radius: 1em;
+    }
+
+  }
+}
+
