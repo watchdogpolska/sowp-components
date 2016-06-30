@@ -119,6 +119,8 @@ gulp.task('watch', () => {
   gulp.watch('./assets/icons/**/*.svg', cb => runSequence('iconfont-gen', 'scss', cb));
   gulp.watch('./assets/javascript/**/*.js', ['js']);
   gulp.watch('./assets/styleguide/**/*', ['styleguide']).on('change', bs.reload);
+  gulp.watch('.bower.json', ['build']);
+  gulp.watch('package.json', ['build']);
 });
 
 gulp.task('build', cb =>
