@@ -671,6 +671,29 @@ Do formularzy zalecam wykorzystanie Bootstrap 3, lecz z zastrzeżeneim dotycząc
 
 
 
+# Progress
+````html
+<div class="sowp-progress" role="progressbar" aria-valuenow="1000" aria-valuemin="0" aria-valuemax="4000">
+  <div style="width: 25%;"></div>
+</div>
+````
+<div class="row">
+  <div class="col-xs">
+    <div class="col-md-6">
+      <div class="sowp-progress" role="progressbar" aria-valuenow="1000" aria-valuemin="0" aria-valuemax="4000">
+        <div style="width: 25%;"></div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="sowp-progress" role="progressbar" aria-valuenow="3000" aria-valuemin="0" aria-valuemax="4000">
+        <div style="width: 75%;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 # Łączenie elementów
 
 Elementy mogą być łączone, aby budować bardziej złożone elementy.
