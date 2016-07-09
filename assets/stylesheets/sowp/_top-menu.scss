@@ -1,15 +1,24 @@
-$sowp-top-menu-bg: $sowp-color-brand;
-$sowp-top-menu-item: $sowp-color-brand--link;
-$sowp-top-menu-item-bg: $sowp-color-brand;
-$sowp-top-menu-item-bg--hover: $sowp-color-brand--accent;
-$sowp-top-menu-caret: $black;
-// Experimental
-$sowp-top-menu-support-second-level: false;
+////
+/// @group Top menu
+////
+
+/// Background color
+$sowp-top-menu-bg: $sowp-color-brand !default;
+/// Item text color
+$sowp-top-menu-item: $sowp-color-brand--link !default;
+/// Item background color
+$sowp-top-menu-item-bg: $sowp-color-brand !default;
+/// Item background color whne it's hovered
+$sowp-top-menu-item-bg--hover: $sowp-color-brand--accent !default;
+/// Caret color
+$sowp-top-menu-caret: $black !default;
+/// Support for the second and higher levels (experimental)
+$sowp-top-menu-support-second-level: false !default;
 
 
 .sowp-top-menu {
   @include clearfix;
-  background: $sowp-color-brand;
+  background: $sowp-top-menu-bg;
 }
 
 .sowp-top-menu-section {

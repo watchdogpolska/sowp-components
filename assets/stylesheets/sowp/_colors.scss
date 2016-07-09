@@ -1,28 +1,50 @@
-$white: #fff !default;
-$black: #000 !default;
+////
+/// @group Colors
+////
 
+// Page background color
 $sowp-page-background: #fff !default;
 
+/// Primary color
 $sowp-color-brand: #d72626 !default;
+/// Primary accent color
 $sowp-color-brand--accent: #7a1a1a !default;
+/// Text color for components with use primary color
 $sowp-color-brand--text: #fff !default;
+/// Link color for components with use primary color
 $sowp-color-brand--link: #fff !default;
+/// Link hover color for components with use primary color
 $sowp-color-brand--link-hover: darken($white, 10%) !default;
 
+/// Light color
 $sowp-color-light: #f0f0f0 !default;
+/// Light accent color
 $sowp-color-light--accent: #808080 !default;
+/// Text color for components with use light color
 $sowp-color-light--text: #4c4c4c !default;
+/// Link color for components with use light color
 $sowp-color-light--link: #d72626 !default;
+/// Link hover color for components with use light color
 $sowp-color-light--link-hover: #d72626 !default;
 
+/// Light color
 $sowp-color-medium: #d9d9d9 !default;
+/// Light accent color
 $sowp-color-medium--accent: #808080 !default;
+/// Text color for components with use medium color
 $sowp-color-medium--text: #4c4c4c !default;
+/// Link color for components with use medium color
 $sowp-color-medium--link: #d72626 !default;
+/// Link hover color for components with use medium color
 $sowp-color-medium--link-hover: #d72626 !default;
 
+/// Dark color
 $sowp-color-dark: #4c4c4c !default;
+/// Dark accent color
 $sowp-color-dark--accent: #808080 !default;
+/// Text color for components with use dark color
 $sowp-color-dark--text: #fff !default;
+/// Link color for components with use dark color
 $sowp-color-dark--link: #fff !default;
+/// Link hover color for components with use dark color
 $sowp-color-dark--link-hover: #d72626 !default;

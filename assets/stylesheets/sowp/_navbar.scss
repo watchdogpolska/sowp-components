@@ -1,3 +1,11 @@
+////
+/// @group Navbar
+////
+
+/// Background color
+$sowp-navbar-bg: $sowp-color-dark !default;
+$sowp-navbar-color: $sowp-color-dark--text !default;
+
 .sowp-navbar {
   position: relative;
 }

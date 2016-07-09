@@ -1,16 +1,15 @@
-$sowp-page-background: #fff !default;
+////
+/// @group vertical menu
+////
 
-$sowp-color-brand: #7a1a1a !default;
-$sowp-color-brand--accent: #d72626 !default;
-$sowp-color-brand--text: #000 !default;
-
-$sowp-color-light: #f0f0f0 !default;
-$sowp-color-light--accent: #d72626 !default;
-$sowp-color-light--text: #4c4c4c !default;
-
-$sowp-color-dark: #4c4c4c !default;
-$sowp-color-dark--accent: #808080 !default;
-$sowp-color-dark--text: #fff !default;
+/// Color of vertical menu item
+$sowp-vertical-menu-item-color: $black !default;
+/// Color of vertical menu item when hover
+$sowp-vertical-menu-item-color--hover: $sowp-color-brand !default;
+/// Color of vertical menu active item
+$sowp-vertical-menu-item-active-color: $black !default;
+/// Color of vertical menu item when hover
+$sowp-vertical-menu-item-active-color--hover: $sowp-color-brand !default;
 
 
 // .sowp-vertical-menu {}
@@ -20,6 +19,7 @@ $sowp-color-dark--text: #fff !default;
   padding: 0;
   margin: 0;
   display: none;
+
   @media(min-width: 600px) {
     display: block;
   }
@@ -32,9 +32,9 @@ $sowp-color-dark--text: #fff !default;
 
   a {
     text-decoration: none;
-    color: $black;
+    color: $sowp-vertical-menu-item-color;
     &:hover, &:focus {
-      color: $sowp-color-brand;
+      color: $sowp-vertical-menu-item-color--active;
       text-decoration: none;
     }
   }
@@ -46,7 +46,12 @@ $sowp-color-dark--text: #fff !default;
 
 .sowp-vertical-menu__item--active {
   a {
-    color: $sowp-color-brand;
+    color: $sowp-vertical-menu-item-active-color;
+
+    &:hover,
+    &:focus {
+      color: $sowp-vertical-menu-item-active-color--hover;
+    }
   }
 }
 

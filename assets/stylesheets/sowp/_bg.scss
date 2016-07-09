@@ -1,7 +1,12 @@
-$sowp-bg-padding: 40px;
+////
+/// @group Global
+////
 
-.sowp-bg{
-	padding: 40px;
+/// Padding for bg, cards and other components
+$sowp-bg-padding: 40px !default;
+
+.sowp-bg {
+  padding: $sowp-bg-padding;
 }
 
 .sowp-bg--brand {

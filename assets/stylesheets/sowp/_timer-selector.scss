@@ -1,3 +1,13 @@
+////
+/// @group Timer selector
+////
+
+/// Item color
+$sowp-timer-selector-item-color: #fff;
+/// Item icon size
+$sowp-timer-selector-item-icon-size: 50px;
+
+
 // .sowp-timer-selector {}
 
 .sowp-timer-selector__content {
@@ -9,7 +19,7 @@ a.sowp-timer-selector__item {
   text-align: center;
   float: left;
   opacity: .5;
-  color: $white;
+  color: $sowp-timer-selector-item-color;
   transition: opacity 200ms;
   text-decoration: none;
 
@@ -22,7 +32,7 @@ a.sowp-timer-selector__item {
 
 .sowp-timer-selector__icon {
   display: block;
-  font-size: 50px;
+  font-size: $sowp-timer-selector-item-icon-size;
 }
 
 .sowp-timer-selector__label {

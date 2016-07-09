@@ -7,6 +7,7 @@ import mainBowerFiles from 'main-bower-files';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import runSequence from 'run-sequence';
 import sherpa from 'style-sherpa';
+import octophant from 'octophant';
 
 // Post CSS plugins
 import autoprefixer from 'autoprefixer';
@@ -17,7 +18,7 @@ const bowerFiles = mainBowerFiles();
 const bs = browserSync.create();
 const reload = bs.stream;
 
-gulp.task('scss', ['scss-lint'], () =>
+gulp.task('scss', ['scss-settings', 'scss-lint'], () =>
   gulp.src('./assets/stylesheets/_sowp.scss')
       .pipe($.rename({ basename: 'sowp-components' }))
       .pipe($.sass())
@@ -34,6 +35,15 @@ gulp.task('scss-lint', () =>
   gulp.src('./assets/stylesheets/**/*.scss')
       .pipe($.scssLint())
 );
+
+
+gulp.task('scss-settings', () => {
+  octophant('./assets/stylesheets/**/*.scss', {
+    title: 'Sowp Components',
+    output: './assets/stylesheets/sowp/_settings.scss',
+    sort: ['global', 'colors'],
+  });
+});
 
 gulp.task('server', () => {
   bs.init({

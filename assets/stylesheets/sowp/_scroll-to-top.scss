@@ -1,11 +1,20 @@
+////
+/// @group Scroll to top
+////
+
+/// Background
+$swop-scrol-to-top-bg: $sowp-color-brand !default;
+/// Text color
+$swop-scrol-to-top-color: $sowp-color-brand !default;
+
 .sowp-scroll-to-top {
   display: block;
   position: relative;
-  background: #D72626;
+  background: $swop-scrol-to-top-bg;
   width: 80px;
-  color: $white;
+  color: $swop-scrol-to-top-color;
   font-size: 18px;
-  padding: 10px 20px ;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   margin-top: 80px;
@@ -21,12 +30,12 @@
     width: 0;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-bottom: 20px solid #D72626;
+    border-bottom: 20px solid $swop-scrol-to-top-bg;
   }
 
   &:hover,
   &:focus {
-    color: $white;
+    color: $swop-scrol-to-top-color;
     text-decoration: none;
     opacity: .9;
   }

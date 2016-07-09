@@ -1,10 +1,22 @@
+////
+/// @group Tabs list
+////
+
+
+// Padding
 $sowp-tab-padding: 40px !default;
+// Background
 $sowp-tab-bg: #d9d9d9 !default;
+// Background when tab is expanded
 $sowp-tab-bg--expanded: #f0f0f0 !default;
+// Text color
 $sowp-tab-color: #4c4c4c !default;
+// Text color when tab is expanded
 $sowp-tab-color--expanded: #d72626 !default;
-$sowp-tab-body-bg--expanded: #f0f0f0 !default;
-$sowp-tab-body-color--expanded: #4c4c4c !default;
+// Body color. Visible only when expanded
+$sowp-tab-body-bg: #f0f0f0 !default;
+// Body color. Visible only when expanded
+$sowp-tab-body-color: #4c4c4c !default;
 
 
 // .sowp-tab-list {}
@@ -41,8 +53,8 @@ $sowp-tab-body-color--expanded: #4c4c4c !default;
 }
 
 .sowp-tabs-list__item-body {
-  background: $sowp-tab-body-bg--expanded;
-  color: $sowp-tab-body-color--expanded;
+  background: $sowp-tab-body-bg;
+  color: $sowp-tab-body-color;
   display: none;
   border-bottom: 2px solid $white;
 

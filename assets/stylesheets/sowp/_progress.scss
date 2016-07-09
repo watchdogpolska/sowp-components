@@ -1,5 +1,11 @@
-$sowp-progress-border: #d9d9d9;
-$swop-progress-fill: #d82626;
+////
+/// @group Progress
+////
+
+/// Border color
+$sowp-progress-border: #d9d9d9 !default;
+/// Fill color
+$swop-progress-fill: #d82626 !default;
 
 .sowp-progress {
   border: 5px solid $sowp-progress-border;

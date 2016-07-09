@@ -1,6 +1,13 @@
-$sowp-checkbox-border: #4c4c4c;
-$sowp-checkbox-border--active: #d72626;
-$sowp-checkbox-dot: #d72626;
+////
+/// @group Checkbox
+////
+
+/// Checkbox border
+$sowp-checkbox-border: $sowp-color-light--text !default;
+/// Checkbox border when checkbox is selected
+$sowp-checkbox-border--active: $sowp-color-brand !default;
+/// Checkbox dot color when checkbox is selected
+$sowp-checkbox-dot: $sowp-color-brand !default;
 
 .checkbox,
 .radio {
@@ -24,37 +31,41 @@ label {
   max-width: 100%;
 }
 
-.checkbox, .checkbox-inline, .radio, .radio-inline {
+.checkbox,
+.checkbox-inline,
+.radio,
+.radio-inline {
   input[type="checkbox"],
    input[type="radio"] {
     display: none;
 
     + label {
       position: relative;
-
-      &::before {
-        content: "";
-        display: inline-block;
-        width: 1.5em;
-        height: 1.5em;
-        border: .1em solid $sowp-checkbox-border;
-        vertical-align: -.4em;
-        margin-left: -20px;
-        margin-right: .25em;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        left: .37em;
-        display: block;
-        width: .75em;
-        height: .75em;
-        background: $sowp-checkbox-border--active;
-        top: .37em;
-        opacity: 0;
-      }
     }
+
+    + label::before {
+      content: "";
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      border: .1em solid $sowp-checkbox-border;
+      vertical-align: -.4em;
+      margin-left: -20px;
+      margin-right: .25em;
+    }
+
+    + label::after {
+      content: "";
+      position: absolute;
+      left: .37em;
+      display: block;
+      width: .75em;
+      height: .75em;
+      background: $sowp-checkbox-border--active;
+      top: .37em;
+      opacity: 0;
+    }
+
 
     &:checked + label {
 
