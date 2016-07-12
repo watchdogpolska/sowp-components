@@ -5,13 +5,14 @@
 //
 //   1. Global
 //   2. Colors
-//   3. Checkbox
-//   4. Navbar
-//   5. Progress
-//   6. Scroll To Top
-//   7. Timer Selector
-//   8. Top Menu
-//   9. Vertical Menu
+//   3. Card
+//   4. Checkbox
+//   5. Navbar
+//   6. Progress
+//   7. Scroll To Top
+//   8. Timer Selector
+//   9. Top Menu
+//  10. Vertical Menu
 
 
 // 1. Global
@@ -26,7 +27,7 @@ $sowp-color-brand: #d72626;
 $sowp-color-brand--accent: #7a1a1a;
 $sowp-color-brand--text: #fff;
 $sowp-color-brand--link: #fff;
-$sowp-color-brand--link-hover: darken($white, 10%);
+$sowp-color-brand--link-hover: darken($sowp-color-brand--link, 10%);
 $sowp-color-light: #f0f0f0;
 $sowp-color-light--accent: #808080;
 $sowp-color-light--text: #4c4c4c;
@@ -43,51 +44,62 @@ $sowp-color-dark--text: #fff;
 $sowp-color-dark--link: #fff;
 $sowp-color-dark--link-hover: #d72626;
 
-// 3. Checkbox
+// 3. Card
+// -------
+
+$sowp-card-padding: 40px;
+$sowp-card-margin-bottom: 40px;
+$sowp-card-divider: #fff;
+
+// 4. Checkbox
 // -----------
 
 $sowp-checkbox-border: $sowp-color-light--text;
 $sowp-checkbox-border--active: $sowp-color-brand;
 $sowp-checkbox-dot: $sowp-color-brand;
 
-// 4. Navbar
+// 5. Navbar
 // ---------
 
 $sowp-navbar-bg: $sowp-color-dark;
+$sowp-navbar-color: $sowp-color-dark--text;
+$sowp-navbar-header-item-color: #fff;
+$sowp-navbar-nav-menu-item-color: #fff;
+$sowp-navbar-dropdown-divider-color: #fff;
 
-// 5. Progress
+// 6. Progress
 // -----------
 
 $sowp-progress-border: #d9d9d9;
 $swop-progress-fill: #d82626;
 
-// 6. Scroll To Top
+// 7. Scroll To Top
 // ----------------
 
 $swop-scrol-to-top-bg: $sowp-color-brand;
 $swop-scrol-to-top-color: $sowp-color-brand;
 
-// 7. Timer Selector
+// 8. Timer Selector
 // -----------------
 
 $sowp-timer-selector-item-color: #fff;
 $sowp-timer-selector-item-icon-size: 50px;
 
-// 8. Top Menu
+// 9. Top Menu
 // -----------
 
 $sowp-top-menu-bg: $sowp-color-brand;
 $sowp-top-menu-item: $sowp-color-brand--link;
 $sowp-top-menu-item-bg: $sowp-color-brand;
 $sowp-top-menu-item-bg--hover: $sowp-color-brand--accent;
-$sowp-top-menu-caret: $black;
+$sowp-top-menu-caret: #000;
 $sowp-top-menu-support-second-level: false;
 
-// 9. Vertical Menu
-// ----------------
+// 10. Vertical Menu
+// -----------------
 
-$sowp-vertical-menu-item-color: $black;
+$sowp-vertical-menu-item-color: #000;
 $sowp-vertical-menu-item-color--hover: $sowp-color-brand;
-$sowp-vertical-menu-item-active-color: $black;
+$sowp-vertical-menu-item-active-color: #000;
 $sowp-vertical-menu-item-active-color--hover: $sowp-color-brand;
 

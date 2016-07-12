@@ -14,7 +14,7 @@ $sowp-color-brand--text: #fff !default;
 /// Link color for components with use primary color
 $sowp-color-brand--link: #fff !default;
 /// Link hover color for components with use primary color
-$sowp-color-brand--link-hover: darken($white, 10%) !default;
+$sowp-color-brand--link-hover: darken($sowp-color-brand--link, 10%) !default;
 
 /// Light color
 $sowp-color-light: #f0f0f0 !default;

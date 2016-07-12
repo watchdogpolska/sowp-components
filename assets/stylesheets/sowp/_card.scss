@@ -1,6 +1,17 @@
+////
+/// @group Card
+////
+
+/// Padding
+$sowp-card-padding: 40px;
+/// Margin under the card
+$sowp-card-margin-bottom: 40px;
+/// Card divider (default)
+$sowp-card-divider: #fff;
+
 .sowp-card {
   padding: 0;
-  margin-bottom: 40px;
+  margin-bottom: $sowp-card-margin-bottom;
 }
 
 .sowp-card__image {
@@ -35,7 +46,7 @@
     display: block;
     width: 50px;
     height: 1px;
-    background: $white;
+    background: $sowp-card-divider;
   }
 }
 

@@ -3,11 +3,11 @@
 ////
 
 /// Color of vertical menu item
-$sowp-vertical-menu-item-color: $black !default;
+$sowp-vertical-menu-item-color: #000 !default;
 /// Color of vertical menu item when hover
 $sowp-vertical-menu-item-color--hover: $sowp-color-brand !default;
 /// Color of vertical menu active item
-$sowp-vertical-menu-item-active-color: $black !default;
+$sowp-vertical-menu-item-active-color: #000 !default;
 /// Color of vertical menu item when hover
 $sowp-vertical-menu-item-active-color--hover: $sowp-color-brand !default;
 
@@ -33,8 +33,9 @@ $sowp-vertical-menu-item-active-color--hover: $sowp-color-brand !default;
   a {
     text-decoration: none;
     color: $sowp-vertical-menu-item-color;
+
     &:hover, &:focus {
-      color: $sowp-vertical-menu-item-color--active;
+      color: $sowp-vertical-menu-item-color--hover;
       text-decoration: none;
     }
   }
@@ -72,7 +73,7 @@ $sowp-vertical-menu-item-active-color--hover: $sowp-color-brand !default;
   &::after {
     content: "V";
     position: absolute;
-    color: $white;
+    color: #000;
     line-height: 40px;
     text-align: center;
     display: block;

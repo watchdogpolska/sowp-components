@@ -49,14 +49,14 @@ $sowp-tab-body-color: #4c4c4c !default;
     }
   }
 
-  border-bottom: 2px solid $white;
+  border-bottom: 2px solid $sowp-page-background;
 }
 
 .sowp-tabs-list__item-body {
   background: $sowp-tab-body-bg;
   color: $sowp-tab-body-color;
   display: none;
-  border-bottom: 2px solid $white;
+  border-bottom: 2px solid $sowp-page-background;
 
   .sowp-tab.is-expanded & {
     display: block;
