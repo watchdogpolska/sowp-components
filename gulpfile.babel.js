@@ -32,7 +32,8 @@ gulp.task('scss', ['scss-settings', 'scss-lint'], () =>
 );
 
 gulp.task('scss-lint', () =>
-  gulp.src('./assets/stylesheets/**/*.scss')
+  // Exclude _icons_generated.scss, because template use tabs instead spaces for indendation
+  gulp.src(['./assets/stylesheets/**/*.scss', '!**/*_icons_generated.scss'])
       .pipe($.scssLint())
 );
 
