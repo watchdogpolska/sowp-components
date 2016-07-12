@@ -268,21 +268,21 @@ W tym celu do ``bower.json`` należy dopisać
       <a href="#" class="sowp-navbar-header__item sowp-navbar-header__item--highlight">Wspieraj nas</a>
     </div>
   </div>
-  <div class="sowp-navbar__nav">
-    <div class="sowp-navbar__content">
-      <ul class="sowp-navbar-nav-menu">
-        <li class="sowp-navbar-nav-menu__item"><a href="#">Lorem.</a></li>
-        <li class="sowp-navbar-nav-menu__item"><a href="#">Incidunt!</a></li>
-        <li class="sowp-navbar-nav-menu__item"><a href="#">Esse.</a></li>
-        <li class="sowp-navbar-nav-menu__item"><a href="#">Nisi.</a></li>
-        <li class="sowp-navbar-nav-menu__item"><a href="#">Similique.</a></li>
-        <li class="sowp-navbar-nav-menu__item"><a href="#">Iste!</a></li>
+  <div class="sowp-navbar-dropdown">
+    <div class="sowp-navbar-dropdown__content">
+      <ul class="sowp-navbar-dropdown__list">
+        <li class="sowp-navbar-dropdown__item"><a href="#">Lorem.</a></li>
+        <li class="sowp-navbar-dropdown__item"><a href="#">Incidunt!</a></li>
+        <li class="sowp-navbar-dropdown__item"><a href="#">Esse.</a></li>
+        <li class="sowp-navbar-dropdown__item"><a href="#">Nisi.</a></li>
+        <li class="sowp-navbar-dropdown__item"><a href="#">Similique.</a></li>
+        <li class="sowp-navbar-dropdown__item"><a href="#">Iste!</a></li>
       </ul>
-      <hr class="sowp-navbar-nav__divider" />
-      <ul class="sowp-navbar-nav-icons">
-        <li class="sowp-navbar-nav-icons--item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-        <li class="sowp-navbar-nav-icons--item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-        <li class="sowp-navbar-nav-icons--item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+      <hr class="sowp-navbar-dropdown__divider" />
+      <ul class="sowp-navbar-dropdown__icons">
+        <li class="sowp-navbar-dropdown__icons-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li class="sowp-navbar-dropdown__icons-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li class="sowp-navbar-dropdown__icons-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
       </ul>
     </div>
   </div>
