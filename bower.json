@@ -20,7 +20,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "^3.0.0",
+    "jquery": "1.9.1 - 2",
     "masonry": "^4.1.0",
     "imagesloaded": "^4.1.0"
   },
@@ -38,5 +38,8 @@
     "jquery": {
       "main": []
     }
+  },
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.6"
   }
 }
