@@ -1,13 +1,14 @@
 import gulp from 'gulp';
 
 import browserSync from 'browser-sync';
-import merge from 'merge-stream';
 import del from 'del';
-import mainBowerFiles from 'main-bower-files';
 import gulpLoadPlugins from 'gulp-load-plugins';
+import isCi from 'is-ci';
+import mainBowerFiles from 'main-bower-files';
+import merge from 'merge-stream';
+import octophant from 'octophant';
 import runSequence from 'run-sequence';
 import sherpa from 'style-sherpa';
-import octophant from 'octophant';
 
 // Post CSS plugins
 import autoprefixer from 'autoprefixer';
@@ -21,12 +22,14 @@ const reload = bs.stream;
 gulp.task('scss', ['scss-settings', 'scss-lint'], () =>
   gulp.src('./assets/stylesheets/_sowp.scss')
       .pipe($.rename({ basename: 'sowp-components' }))
+      .pipe($.if(!isCi, $.plumber()))
       .pipe($.sass())
       .pipe($.postcss([autoprefixer]))
       .pipe(gulp.dest('./dist/css/'))
       .pipe(reload())
       .pipe($.postcss([cssnano]))
       .pipe($.rename({ extname: '.min.css' }))
+      .pipe($.if(!isCi, $.plumber.stop()))
       .pipe(gulp.dest('./dist/css/'))
       .pipe(reload())
 );
