@@ -23,7 +23,6 @@ $sowp-bg-padding: 40px !default;
       text-decoration: underline;
     }
   }
-
 }
 
 .sowp-bg--light {
@@ -74,3 +73,9 @@ $sowp-bg-padding: 40px !default;
   }
 }
 
+.sowp-bg--brand,
+.sowp-bg--light,
+.sowp-bg--medium,
+.sowp-bg--dark {
+  @include sowp-hc-helper($background: true, $border: true, $color: true);
+}

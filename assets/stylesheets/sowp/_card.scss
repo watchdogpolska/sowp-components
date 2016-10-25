@@ -47,6 +47,7 @@ $sowp-card-divider: #fff;
     width: 50px;
     height: 1px;
     background: $sowp-card-divider;
+    @include sowp-hc-helper($background: true);
   }
 }
 
@@ -76,6 +77,15 @@ $sowp-card-divider: #fff;
 .sowp-card--dark {
   @include fold($sowp-color-dark--accent);
   @extend .sowp-bg--dark;
+}
+
+.sowp-card--brand,
+.sowp-card--light ,
+.sowp-card--medium ,
+.sowp-card--dark {
+  @include sowp-hc {
+    @include fold($color: white, $background: black, $top: -2px, $right: -2px);
+  }
 }
 
 .sowp-card--no-margin {

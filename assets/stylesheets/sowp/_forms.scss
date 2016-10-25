@@ -52,6 +52,9 @@ label {
       vertical-align: -.4em;
       margin-left: -20px;
       margin-right: .25em;
+      @include sowp-hc {
+        border-color: yellow;
+      }
     }
 
     + label::after {
@@ -64,6 +67,9 @@ label {
       background: $sowp-checkbox-border--active;
       top: .37em;
       opacity: 0;
+      @include sowp-hc {
+        background: yellow;
+      }
     }
 
 

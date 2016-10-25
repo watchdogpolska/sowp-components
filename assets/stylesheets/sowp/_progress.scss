@@ -12,10 +12,14 @@ $swop-progress-fill: #d82626 !default;
   height: 3em;
   margin: .5em 0;
 
+  @include sowp-hc-helper($border: true, $color: true);
   div {
     background: $swop-progress-fill;
     height: 100%;
     width: 30%;
+    @include sowp-hc() {
+      background: white;
+    }
   }
 }
 

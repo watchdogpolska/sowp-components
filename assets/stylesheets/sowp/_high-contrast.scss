@@ -1,0 +1,52 @@
+////
+/// @group High-contrast
+////
+
+$sowp-high-contrast-text: white;
+$sowp-high-contrast-text-focus: yellow;
+$sowp-high-contrast-text-focus-hover: white;
+
+@mixin sowp-hc() {
+  html.high-contrast & {
+    @content;
+  }
+}
+
+/// High contrast helper
+@mixin sowp-hc-helper($focus: false, $border: false, $background: false, $color: false) {
+  @include sowp-hc() {
+    @if $focus {
+      @if $color {
+        color: $sowp-high-contrast-text-focus;
+      }
+      @if $border {
+        border: 2px solid $sowp-high-contrast-text-focus;
+      }
+      @if $background {
+        background: black;
+      }
+      &:focus,
+      &:hover {
+        @if $color {
+          color: $sowp-high-contrast-text-focus-hover;
+          text-decoration: underline;
+        }
+        @if $border {
+          border: 2px solid $sowp-high-contrast-text-focus-hover;
+        }
+      }
+    } @else {
+      @if $color {
+        color: $sowp-high-contrast-text;
+      }
+      @if $border {
+        border: 2px solid $sowp-high-contrast-text;
+      }
+      @if $background {
+        background: black;
+      }
+    }
+  }
+}
+
+

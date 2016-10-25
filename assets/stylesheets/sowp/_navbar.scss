@@ -20,6 +20,7 @@ $sowp-navbar-dropdown-divider-color: #fff !default;
 .sowp-navbar__header {
   background: $sowp-color-dark;
   color: $sowp-color-dark--text;
+  @include sowp-hc-helper($background: true, $border: true, $color: true);
 }
 
 .sowp-navbar-dropdown {
@@ -28,9 +29,12 @@ $sowp-navbar-dropdown-divider-color: #fff !default;
   background: $sowp-color-dark;
   color: $sowp-color-dark--text;
   transition: max-height 200ms;
+  @include sowp-hc-helper($background: true, $color: true);
+
 
   .sowp-navbar.is-expanded & {
     max-height: 400px;
+    @include sowp-hc-helper($border: true);
   }
 
   @media(min-width: 600px) {
@@ -39,6 +43,7 @@ $sowp-navbar-dropdown-divider-color: #fff !default;
     right: 0;
     background: $sowp-color-brand;
     color: $sowp-color-brand--text;
+    @include sowp-hc-helper($background: true, $color: true);
   }
 }
 
@@ -49,6 +54,10 @@ $sowp-navbar-dropdown-divider-color: #fff !default;
 .sowp-navbar__toggle {
   .sowp-navbar.is-expanded & {
     background: $sowp-color-brand;
+    @include sowp-hc() {
+      background: $sowp-high-contrast-text-focus;
+      color: black;
+    }
   }
 }
 
@@ -65,11 +74,20 @@ $sowp-navbar-dropdown-divider-color: #fff !default;
     background: $sowp-color-light--accent;
     color: $sowp-navbar-header-item-color;
     text-decoration: none;
+    @include sowp-hc() {
+      background: $sowp-high-contrast-text-focus;
+      color: black;
+    }
   }
 }
 
 .sowp-navbar-header__item--highlight {
   background: $sowp-color-brand;
+  @include sowp-hc-helper($background: true);
+  @include sowp-hc {
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+  }
 
   &:hover,
   &:focus {
@@ -103,6 +121,7 @@ $sowp-navbar-dropdown-divider-color: #fff !default;
   text-align: center;
 
   a {
+    @include sowp-hc-helper($focus: true, $color: true, $background: true);
     color: $sowp-navbar-dropdown-item-color;
     text-decoration: none;
     display: block;
@@ -146,6 +165,7 @@ $sowp-navbar-dropdown-divider-color: #fff !default;
   padding: 0 20px;
 
   a {
+    @include sowp-hc-helper($focus: true, $color: true);
     color: $sowp-navbar-dropdown-item-color;
 
     &:hover,
