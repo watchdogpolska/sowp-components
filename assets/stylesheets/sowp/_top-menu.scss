@@ -19,10 +19,6 @@ $sowp-top-menu-support-second-level: false !default;
 .sowp-top-menu {
   @include clearfix;
   background: $sowp-top-menu-bg;
-  @include sowp-hc() {
-    background: black;
-    border: 1px solid yellow;
-  }
 }
 
 .sowp-top-menu-section {
@@ -36,20 +32,11 @@ $sowp-top-menu-support-second-level: false !default;
   li {
     position: relative;
     background: $sowp-top-menu-item-bg;
-    @include sowp-hc() {
-      border-left: 1px solid yellow;
-      border-right: 1px solid yellow;
-      background: black;
-    }
 
     &:hover,
     &.hover > a,
     a:hover {
       background: $sowp-top-menu-item-bg--hover;
-      @include sowp-hc() {
-        color: black;
-        background: yellow;
-      }
     }
   }
 
@@ -65,14 +52,6 @@ $sowp-top-menu-support-second-level: false !default;
       display: inline-block;
       top: 17px;
       right: 10px;
-      @include sowp-hc {
-        border-top-color: yellow;
-      }
-    }
-    &:hover::after{
-      @include sowp-hc {
-        border-top-color: black;
-      }
     }
   }
 

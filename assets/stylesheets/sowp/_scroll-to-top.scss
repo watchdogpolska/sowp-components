@@ -18,11 +18,7 @@ $swop-scrol-to-top-color: $sowp-color-brand--text !default;
   text-align: center;
   text-decoration: none;
   margin-top: 80px;
-  @include sowp-hc(){
-    background: black;
-    border: 2px solid yellow;
-    color: yellow;
-  }
+
   &::after {
     content: "";
     position: absolute;
@@ -35,10 +31,6 @@ $swop-scrol-to-top-color: $sowp-color-brand--text !default;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     border-bottom: 20px solid $swop-scrol-to-top-bg;
-
-    @include sowp-hc {
-      border-bottom-color: yellow;
-    }
   }
 
   &:hover,
@@ -46,11 +38,5 @@ $swop-scrol-to-top-color: $sowp-color-brand--text !default;
     color: $swop-scrol-to-top-color;
     text-decoration: none;
     opacity: .9;
-    @include sowp-hc-helper ($border: true, $color: true);
-    &:after{
-      @include sowp-hc {
-        border-bottom-color: white;
-      }
-    }
   }
 }

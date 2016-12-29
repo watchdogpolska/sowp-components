@@ -22,7 +22,6 @@ a.sowp-timer-selector__item {
   color: $sowp-timer-selector-item-color;
   transition: opacity 200ms;
   text-decoration: none;
-  @include sowp-hc-helper($focus: true, $color: true);
 
   &:hover,
   &:focus {

@@ -27,11 +27,6 @@ $sowp-tab-body-color: #4c4c4c !default;
   background: $sowp-tab-bg;
   color: $sowp-tab-color;
   cursor: pointer;
-  @include sowp-hc {
-    border: 1px solid white;
-    background: black;
-    color: yellow;
-  }
 
   &::after {
     content: "V";
@@ -49,12 +44,6 @@ $sowp-tab-body-color: #4c4c4c !default;
     background: $sowp-tab-bg--expanded;
     color: $sowp-tab-color--expanded;
 
-    @include sowp-hc {
-      border: 1px solid white;
-      background: black;
-      color: yellow;
-    }
-
     &::after {
       transform: rotateZ(180deg);
     }
@@ -68,11 +57,6 @@ $sowp-tab-body-color: #4c4c4c !default;
   color: $sowp-tab-body-color;
   display: none;
   border-bottom: 2px solid $sowp-page-background;
-  @include sowp-hc {
-    border: 2px solid white;
-    background: black;
-    color: white;
-  }
 
   .sowp-tab.is-expanded & {
     display: block;

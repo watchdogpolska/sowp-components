@@ -314,56 +314,56 @@ W tym celu do ``bower.json`` należy dopisać
 Do formularzy zalecam wykorzystanie Bootstrap 3, lecz z zastrzeżeneim dotyczącym pół typu `checkbox` i `radio`.
 
 ````html
-<div class="checkbox">
+<div class="sowp-checkbox">
   <input type="checkbox" id="checkbox3" checked>
   <label for="checkbox3">Check me out</label>
 </div>
-<div class="checkbox">
+<div class="sowp-checkbox">
   <input type="checkbox" id="checkbox4">
   <label for="checkbox4">Check me out</label>
 </div>
-<div class="radio">
+<div class="sowp-radio">
   <input type="radio" name="radio2" id="radio3" checked>
   <label for="radio3">Check me out</label>
 </div>
-<div class="radio">
+<div class="sowp-radio">
   <input type="radio" name="radio2"  id="radio4">
   <label for="radio4">Check me out</label>
 </div>
 ````
 <div class="row">
   <div class="col-xs-12 col-md-6">
-    <div class="checkbox" style="font-size: 36px">
+    <div class="sowp-checkbox" style="font-size: 36px">
       <input type="checkbox" id="checkbox1">
       <label for="checkbox1">Check me out</label>
     </div>
-    <div class="checkbox" style="font-size: 36px">
+    <div class="sowp-checkbox" style="font-size: 36px">
       <input type="checkbox" checked id="checkbox2">
       <label for="checkbox2">Check me out</label>
     </div>
-    <div class="checkbox">
+    <div class="sowp-checkbox">
       <input type="checkbox" id="checkbox3" checked>
       <label for="checkbox3">Check me out</label>
     </div>
-    <div class="checkbox">
+    <div class="sowp-checkbox">
       <input type="checkbox" id="checkbox4">
       <label for="checkbox4">Check me out</label>
     </div>
   </div>
   <div class="col-xs-12 col-md-6">
-    <div class="radio" style="font-size: 36px">
+    <div class="sowp-radio" style="font-size: 36px">
       <input type="radio" name="radio1" id="radio1">
       <label for="radio1">Check me out</label>
     </div>
-    <div class="radio" style="font-size: 36px">
+    <div class="sowp-radio" style="font-size: 36px">
       <input type="radio" name="radio1" checked id="radio2">
       <label for="radio2">Check me out</label>
     </div>
-    <div class="radio">
+    <div class="sowp-radio">
       <input type="radio" name="radio2" id="radio3" checked>
       <label for="radio3">Check me out</label>
     </div>
-    <div class="radio">
+    <div class="sowp-radio">
       <input type="radio" name="radio2"  id="radio4">
       <label for="radio4">Check me out</label>
     </div>

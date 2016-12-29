@@ -4,45 +4,35 @@
 
 /// Checkbox border
 $sowp-checkbox-border: $sowp-color-light--text !default;
-/// Checkbox border when checkbox is selected
-$sowp-checkbox-border--active: $sowp-color-brand !default;
 /// Checkbox dot color when checkbox is selected
 $sowp-checkbox-dot: $sowp-color-brand !default;
 
-.checkbox,
-.radio {
+.sowp-checkbox,
+.sowp-radio {
   position: relative;
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
 
-  label,
-  .label {
+  label {
+    display: inline-block;
+    max-width: 100%;
     min-height: 20px;
     padding-left: 20px;
     margin-bottom: 0;
     font-weight: 400;
     cursor: pointer;
   }
-}
 
-label {
-  display: inline-block;
-  max-width: 100%;
-}
-
-.checkbox,
-.checkbox-inline,
-.radio,
-.radio-inline {
   input[type="checkbox"],
-   input[type="radio"] {
+  input[type="radio"] {
     display: none;
 
     + label {
       position: relative;
     }
 
+    // Border
     + label::before {
       content: "";
       display: inline-block;
@@ -52,11 +42,9 @@ label {
       vertical-align: -.4em;
       margin-left: -20px;
       margin-right: .25em;
-      @include sowp-hc {
-        border-color: yellow;
-      }
     }
 
+    // Dot
     + label::after {
       content: "";
       position: absolute;
@@ -64,42 +52,32 @@ label {
       display: block;
       width: .75em;
       height: .75em;
-      background: $sowp-checkbox-border--active;
+      background: $sowp-checkbox-dot;
       top: .37em;
       opacity: 0;
-      @include sowp-hc {
-        background: yellow;
-      }
     }
 
-
     &:checked + label {
-
-      &:before {
+      &::before {
         border-color: $sowp-checkbox-dot;
       }
 
-      &:after {
+      &::after {
         opacity: 1;
       }
     }
   }
-
 }
 
-.radio,
-.radio-inline {
-  input[type="radio"],
-   input[type="radio"] {
-
-    + label::before {
+.sowp-radio {
+  input[type="radio"] {
+    + label::before, + label::after {
       border-radius: 1em;
     }
-
-    + label::after {
-      border-radius: 1em;
-    }
-
   }
 }
 
+.sowp-checkbox-inline,
+.sowp-radio-inline {
+  display: inline-block;
+}
