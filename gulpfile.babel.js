@@ -105,11 +105,12 @@ gulp.task('iconfont-gen', () => {
       path: 'scss',
       targetPath: '../stylesheets/sowp/_icons_generated.scss',
       fontPath: '../fonts/',
-      cssClass: 'isowp',
+      cssClass: 'isowp'
     }))
     .pipe($.iconfont({
       fontName,
       formats: ['svg', 'ttf', 'eot', 'woff', 'woff2'],
+      normalize: true
     }))
     .pipe(gulp.dest('./assets/fonts/'));
 });
@@ -130,7 +131,7 @@ gulp.task('clean', () => del(['./dist/**/*']));
 
 gulp.task('watch', () => {
   gulp.watch('./assets/stylesheets/**/*.scss', ['scss']);
-  gulp.watch('./assets/icons/**/*.svg', cb => runSequence('iconfont-gen', 'scss', cb));
+  gulp.watch('./assets/icons/**/*.svg', cb => runSequence('iconfont-gen', 'scss'));
   gulp.watch('./assets/javascript/**/*.js', ['js']);
   gulp.watch('./assets/styleguide/**/*', ['styleguide']).on('change', bs.reload);
   gulp.watch('.bower.json', ['build']);

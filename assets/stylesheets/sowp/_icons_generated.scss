@@ -27,11 +27,38 @@
 @function isowp-char($filename) {
 	$char: "";
 
-	@if $filename == circle-left {
+	@if $filename == accessibility {
 		$char: "\E001";
 	}
-	@if $filename == circle-right {
+	@if $filename == arrow {
 		$char: "\E002";
+	}
+	@if $filename == circle-left {
+		$char: "\E003";
+	}
+	@if $filename == circle-right {
+		$char: "\E004";
+	}
+	@if $filename == clock-15min {
+		$char: "\E005";
+	}
+	@if $filename == clock-1h {
+		$char: "\E006";
+	}
+	@if $filename == clock-5min {
+		$char: "\E007";
+	}
+	@if $filename == clock-more {
+		$char: "\E008";
+	}
+	@if $filename == docs {
+		$char: "\E009";
+	}
+	@if $filename == kreski {
+		$char: "\E00A";
+	}
+	@if $filename == printer {
+		$char: "\E00B";
 	}
 
 	@return $char;
@@ -48,9 +75,36 @@
 	}
 }
 
+.isowp-accessibility {
+	@include isowp(accessibility);
+}
+.isowp-arrow {
+	@include isowp(arrow);
+}
 .isowp-circle-left {
 	@include isowp(circle-left);
 }
 .isowp-circle-right {
 	@include isowp(circle-right);
+}
+.isowp-clock-15min {
+	@include isowp(clock-15min);
+}
+.isowp-clock-1h {
+	@include isowp(clock-1h);
+}
+.isowp-clock-5min {
+	@include isowp(clock-5min);
+}
+.isowp-clock-more {
+	@include isowp(clock-more);
+}
+.isowp-docs {
+	@include isowp(docs);
+}
+.isowp-kreski {
+	@include isowp(kreski);
+}
+.isowp-printer {
+	@include isowp(printer);
 }
