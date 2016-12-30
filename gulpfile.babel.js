@@ -19,11 +19,34 @@ const bowerFiles = mainBowerFiles();
 const bs = browserSync.create();
 const reload = bs.stream;
 
-gulp.task('scss', ['scss-settings', 'scss-lint'], () =>
-  gulp.src('./assets/stylesheets/_sowp.scss')
+gulp.task('scss', ['scss:components', 'scss:bootstrap']);
+
+gulp.task('scss:components', ['scss-settings', 'scss-lint'], () =>
+  gulp.src([
+    './assets/stylesheets/_sowp.scss',
+  ])
       .pipe($.rename({ basename: 'sowp-components' }))
       .pipe($.if(!isCi, $.plumber()))
       .pipe($.sass())
+      .pipe($.postcss([autoprefixer]))
+      .pipe(gulp.dest('./dist/css/'))
+      .pipe(reload())
+      .pipe($.postcss([cssnano]))
+      .pipe($.rename({ extname: '.min.css' }))
+      .pipe($.if(!isCi, $.plumber.stop()))
+      .pipe(gulp.dest('./dist/css/'))
+      .pipe(reload())
+);
+
+gulp.task('scss:bootstrap', ['scss-settings', 'scss-lint'], () =>
+  gulp.src([
+    './assets/stylesheets/_sowp-bootstrap.scss',
+  ])
+      .pipe($.rename({ basename: 'sowp-bootstrap' }))
+      .pipe($.if(!isCi, $.plumber()))
+      .pipe($.sass({
+        includePaths: ['./bower_components'],
+      }))
       .pipe($.postcss([autoprefixer]))
       .pipe(gulp.dest('./dist/css/'))
       .pipe(reload())
@@ -117,7 +140,10 @@ gulp.task('iconfont-gen', () => {
 
 gulp.task('iconfont', () => gulp.src('./assets/fonts/*').pipe(gulp.dest('./dist/fonts/')));
 
-gulp.task('styleguide', (done) =>
+
+gulp.task('styleguide', ['styleguide:bootstrap', 'styleguide:components']);
+
+gulp.task('styleguide:components', (done) =>
   sherpa('./assets/styleguide/index.md', {
     output: './dist/index.html',
     template: './assets/styleguide/template.html',
@@ -127,13 +153,24 @@ gulp.task('styleguide', (done) =>
   })
 );
 
+gulp.task('styleguide:bootstrap', (done) =>
+  sherpa('./assets/styleguide/bootstrap.md', {
+    output: './dist/bootstrap.html',
+    template: './assets/styleguide/template.html',
+  }, () => {
+    bs.reload();
+    done();
+  })
+);
+
+
 gulp.task('clean', () => del(['./dist/**/*']));
 
 gulp.task('watch', () => {
   gulp.watch('./assets/stylesheets/**/*.scss', ['scss']);
   gulp.watch('./assets/icons/**/*.svg', cb => runSequence('iconfont-gen', 'scss'));
   gulp.watch('./assets/javascript/**/*.js', ['js']);
-  gulp.watch('./assets/styleguide/**/*', ['styleguide']).on('change', bs.reload);
+  gulp.watch('./assets/styleguide/**/*', ['styleguide']);
   gulp.watch('.bower.json', ['build']);
   gulp.watch('package.json', ['build']);
 });

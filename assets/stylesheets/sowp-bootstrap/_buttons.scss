@@ -1,0 +1,7 @@
+.btn-light {
+  @include button-variant($sowp-color-light--text, $sowp-color-light, $sowp-color-light);
+}
+
+.btn-dark {
+  @include button-variant($sowp-color-dark--text, $sowp-color-dark, $sowp-color-dark);
+}
