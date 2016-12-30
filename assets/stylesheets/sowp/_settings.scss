@@ -31,18 +31,18 @@ $sowp-color-brand--link-hover: darken($sowp-color-brand--link, 10%);
 $sowp-color-light: #f0f0f0;
 $sowp-color-light--accent: #808080;
 $sowp-color-light--text: #4c4c4c;
-$sowp-color-light--link: #d72626;
-$sowp-color-light--link-hover: #d72626;
+$sowp-color-light--link: $sowp-color-brand;
+$sowp-color-light--link-hover: $sowp-color-brand;
 $sowp-color-medium: #d9d9d9;
 $sowp-color-medium--accent: #808080;
 $sowp-color-medium--text: #4c4c4c;
-$sowp-color-medium--link: #d72626;
-$sowp-color-medium--link-hover: #d72626;
+$sowp-color-medium--link: $sowp-color-brand;
+$sowp-color-medium--link-hover: $sowp-color-brand;
 $sowp-color-dark: #4c4c4c;
 $sowp-color-dark--accent: #808080;
 $sowp-color-dark--text: #fff;
 $sowp-color-dark--link: #fff;
-$sowp-color-dark--link-hover: #d72626;
+$sowp-color-dark--link-hover: $sowp-color-brand;
 
 // 3. Card
 // -------
