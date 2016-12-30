@@ -46,14 +46,7 @@ $sowp-checkbox-dot: $sowp-color-brand !default;
 
     // Dot
     + label::after {
-      content: "";
-      position: absolute;
-      left: .37em;
-      display: block;
-      width: .75em;
-      height: .75em;
-      background: $sowp-checkbox-dot;
-      top: .37em;
+      @include dot($sowp-checkbox-dot, false);
       opacity: 0;
     }
 

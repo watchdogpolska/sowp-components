@@ -1,0 +1,10 @@
+.sowp-content ul {
+  li {
+    position: relative;
+    list-style: none;
+    &::before {
+      @include dot($sowp-color-brand);
+      left: -1em;
+    }
+  }
+}

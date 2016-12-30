@@ -19,3 +19,17 @@
     border-right-color: $background;
   }
 }
+
+@mixin dot($color: $sowp-color-brand, $round: true) {
+  content: "";
+  position: absolute;
+  display: block;
+  top: .37em;
+  left: .37em;
+  width: .75em;
+  height: .75em;
+  background: $color;
+  @if $round == true {
+      border-radius: 1em;
+  }
+}
