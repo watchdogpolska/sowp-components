@@ -1,0 +1,1160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/github.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/sowp-bootstrap.css">
+    <link rel="stylesheet" href="css/sowp-components.css">
+    <style>
+    /* This styles individual sections of the style guide */
+    
+    .ss-section:not(:last-child) {
+        padding-bottom: 4rem;
+        border-bottom: 2px solid #ccc;
+        margin-bottom: 4rem;
+    }
+    /* This styles code blocks used for examples. */
+    
+    .ss-code code {
+        display: block;
+        padding: 1rem;
+        overflow-x: scroll;
+        margin-bottom: 1.5rem;
+    }
+    
+    .ss-code-live {
+      border: 1px solid gray;
+      border-radius: 5px;
+      padding: 30px 20px 15px;
+      position: relative;
+      margin-bottom: 5px;
+    }
+    .ss-code-live:before{
+      content: 'Przykład';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 5px;
+      background: gray;
+      color: white;
+      padding: 4px 10px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .ss-code-live:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    /* This styles the color blocks used in the color documentation. */
+    
+    .color-block {
+        border-radius: 2px;
+        display: block;
+        padding: 8px 8px 6px;
+        color: #333;
+        text-transform: uppercase;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .color-block span {
+        display: block;
+        width: 100%;
+        height: 100px;
+        margin-bottom: 0.42857rem;
+    }
+    /* This styles code documentation header */
+    
+    .docs-header {
+        background: #D72626;
+        color: white;
+        padding: 50px 0;
+    }
+    
+    .docs-header h1 {
+        color: white;
+    }
+    #icon-table{
+
+    }
+    #icon-table label{
+      display: block;
+    }
+    #icon-table .preview{
+      font-size: 50px;
+      text-align: center;
+      color: black;
+    }
+    #icon-table .preview:hover{
+      color: #7A1A1A;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="docs-header">
+        <div class="container">
+            <h1>Sieć Obywatelska Zbiór komponentów</h1>
+            <p>Zbiór komponentów wykorzysytwnaych przez stowarzyszenie do budowania stron internetowych</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-md-push-9 hidden-xs hidden-sm">
+                <div data-spy="affix" data-offset-top="60" data-offset-top="80">
+                    <ul class="nav">
+                        <li><a href="#jak-u-ywa-">Jak używać?</a></li>
+                        <li><a href="#card">Card</a></li>
+                        <li><a href="#bg">Bg</a></li>
+                        <li><a href="#masonry-39-s-grid">Masonry&#39;s Grid</a></li>
+                        <li><a href="#navbar">Navbar</a></li>
+                        <li><a href="#scroll-to-top">Scroll to top</a></li>
+                        <li><a href="#forms-checkbox-radio">Forms - checkbox/radio</a></li>
+                        <li><a href="#tabs">Tabs</a></li>
+                        <li><a href="#timer-selector">Timer Selector</a></li>
+                        <li><a href="#top-menu">Top menu</a></li>
+                        <li><a href="#vertical-menu">Vertical menu</a></li>
+                        <li><a href="#icons">Icons</a></li>
+                        <li><a href="#tabs-list">Tabs list</a></li>
+                        <li><a href="#progress">Progress</a></li>
+                        <li><a href="#-czenie-element-w">Łączenie elementów</a></li>
+                        <li><a href="#mixins">Mixins</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9 col-md-pull-3">
+                <section class="ss-section" id="jak-u-ywa-">
+                    <h1>Jak używać?</h1><h1>Jak używać?</h1><h2>JavaScript</h2><h2>CSS</h2><h2>SCSS</h2><h2>Bower</h2><p>Z powodu błędów w bibliotece Masonry wymagane jest wykorzystanie wcześniej skompilowanej werjsi.
+W tym celu do <code>bower.json</code> należy dopisać</p>
+<div class="ss-code"><pre><code class="json">  "overrides": {
+    "masonry": {
+      "main": "./dist/masonry.pkgd.js",
+      "dependencies": {
+      }
+    }
+  }</code></pre></div>
+                </section>
+                <section class="ss-section" id="card">
+                    <h1>Card</h1><h2>Style</h2><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-md-4"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card sowp-card--brand"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card__content"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-md-4"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card sowp-card--light"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card__content"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, nisi provident voluptatum nobis dignissimos vel! Doloribus accusamus optio autem dolores adipisci consectetur harum maiores in. Possimus corporis similique vero, facilis.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-md-4"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card sowp-card--dark"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card__content"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, nisi provident voluptatum nobis dignissimos vel! Doloribus accusamus optio autem dolores adipisci consectetur harum maiores in. Possimus corporis similique vero, facilis.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div>
+
+<div class="ss-code-live"><div class="row">
+  <div class="col-md-4">
+    <div class="sowp-card sowp-card--brand">
+      <div class="sowp-card__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="sowp-card sowp-card--light">
+      <div class="sowp-card__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, nisi provident voluptatum nobis dignissimos vel! Doloribus accusamus optio autem dolores adipisci consectetur harum maiores in. Possimus corporis similique vero, facilis.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="sowp-card sowp-card--dark">
+      <div class="sowp-card__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, nisi provident voluptatum nobis dignissimos vel! Doloribus accusamus optio autem dolores adipisci consectetur harum maiores in. Possimus corporis similique vero, facilis.</p>
+      </div>
+    </div>
+  </div>
+</div></div><h2>Z tytułem</h2><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card sowp-card--brand"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card__heading"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Lorem ipsum dolor.<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card__content"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div>
+
+<div class="ss-code-live"><div class="sowp-card sowp-card--brand">
+  <div class="sowp-card__heading">
+   <h1>Lorem ipsum dolor.</h1>
+  </div>
+  <div class="sowp-card__content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!</p>
+  </div>
+</div></div><h2>Z obrazem nagłówkowym</h2><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card sowp-card--light"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card__image"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://google.com"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">""</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card__content"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-md-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card sowp-card--brand"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card__image"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://google.com"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">""</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card__content"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div>
+
+<div class="ss-code-live"><div class="sowp-card sowp-card--light">
+  <div class="sowp-card__image">
+    <a href="http://google.com">
+      <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
+    </a>
+  </div>
+  <div class="sowp-card__content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="sowp-card sowp-card--brand">
+      <div class="sowp-card__image">
+        <a href="http://google.com">
+          <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
+        </a>
+      </div>
+      <div class="sowp-card__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+      </div>
+    </div>
+  </div>
+</div></div>
+                </section>
+                <section class="ss-section" id="bg">
+                    <h1>Bg</h1><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-md-4"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-bg sowp-bg--brand"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-md-4"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-bg sowp-bg--light"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, nisi provident voluptatum nobis dignissimos vel! Doloribus accusamus optio autem dolores adipisci consectetur harum maiores in. Possimus corporis similique vero, facilis.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-md-4"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-bg sowp-bg--dark"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, nisi provident voluptatum nobis dignissimos vel! Doloribus accusamus optio autem dolores adipisci consectetur harum maiores in. Possimus corporis similique vero, facilis.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div>
+
+<div class="ss-code-live"><div class="row">
+  <div class="col-md-4">
+    <div class="sowp-bg sowp-bg--brand">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="sowp-bg sowp-bg--light">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, nisi provident voluptatum nobis dignissimos vel! Doloribus accusamus optio autem dolores adipisci consectetur harum maiores in. Possimus corporis similique vero, facilis.</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="sowp-bg sowp-bg--dark">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, nisi provident voluptatum nobis dignissimos vel! Doloribus accusamus optio autem dolores adipisci consectetur harum maiores in. Possimus corporis similique vero, facilis.</p>
+    </div>
+  </div>
+</div></div>
+                </section>
+                <section class="ss-section" id="masonry-39-s-grid">
+                    <h1>Masonry&#39;s Grid</h1><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-grid sowp-grid--to-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-grid--gutter"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-grid--item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card sowp-card--light"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card__image"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://google.com"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">""</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card__content"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-grid--item sowp-card sowp-card--light"</span>&gt;</span>[...]<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-grid--item sowp-card sowp-card--light"</span>&gt;</span>[...]<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-grid--item sowp-card sowp-card--light"</span>&gt;</span>[...]<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-grid--item sowp-card sowp-card--light"</span>&gt;</span>[...]<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-grid--item sowp-card sowp-card--light"</span>&gt;</span>[...]<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-grid--item sowp-card sowp-card--light"</span>&gt;</span>[...]<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-grid--item sowp-card sowp-card--light"</span>&gt;</span>[...]<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><div class="sowp-grid sowp-grid--to-3">
+  <div class="sowp-grid--gutter"></div>
+  <div class="sowp-grid--item"></div>
+  <div class="sowp-grid--item sowp-card sowp-card--light">
+    <div class="sowp-card__image">
+      <a href="http://google.com">
+        <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
+      </a>
+    </div>
+    <div class="sowp-card__content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+    </div>
+  </div>
+  <div class="sowp-grid--item sowp-card sowp-card--light">
+    <div class="sowp-card__image">
+      <a href="http://google.com">
+        <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
+      </a>
+    </div>
+    <div class="sowp-card__content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+    </div>
+  </div>
+  <div class="sowp-grid--item sowp-card sowp-card--light">
+    <div class="sowp-card__image">
+      <a href="http://google.com">
+        <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
+      </a>
+    </div>
+    <div class="sowp-card__content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+    </div>
+  </div>
+  <div class="sowp-grid--item sowp-card sowp-card--light">
+    <div class="sowp-card__image">
+      <a href="http://google.com">
+        <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
+      </a>
+    </div>
+    <div class="sowp-card__content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+    </div>
+  </div>
+  <div class="sowp-grid--item sowp-card sowp-card--light">
+    <div class="sowp-card__image">
+      <a href="http://google.com">
+        <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
+      </a>
+    </div>
+    <div class="sowp-card__content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+    </div>
+  </div>
+  <div class="sowp-grid--item sowp-card sowp-card--light">
+    <div class="sowp-card__image">
+      <a href="http://google.com">
+        <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
+      </a>
+    </div>
+    <div class="sowp-card__content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+    </div>
+  </div>
+  <div class="sowp-grid--item sowp-card sowp-card--light">
+    <div class="sowp-card__image">
+      <a href="http://google.com">
+        <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
+      </a>
+    </div>
+    <div class="sowp-card__content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+    </div>
+  </div>
+  <div class="sowp-grid--item sowp-card sowp-card--light">
+    <div class="sowp-card__image">
+      <a href="http://google.com">
+        <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
+      </a>
+    </div>
+    <div class="sowp-card__content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+    </div>
+  </div>
+  <div class="sowp-grid--item sowp-card sowp-card--light">
+    <div class="sowp-card__image">
+      <a href="http://google.com">
+        <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
+      </a>
+    </div>
+    <div class="sowp-card__content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+    </div>
+  </div>
+  <div class="sowp-grid--item sowp-card sowp-card--light">
+    <div class="sowp-card__image">
+      <a href="http://google.com">
+        <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
+      </a>
+    </div>
+    <div class="sowp-card__content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+    </div>
+  </div>
+</div>
+                </section>
+                <section class="ss-section" id="navbar">
+                    <h1>Navbar</h1><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar__header sowp-navbar-header"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-header__left"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-header__item"</span>&gt;</span>EN<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-header__right"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-header__item sowp-navbar__toggle"</span>&gt;</span>MENU<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-header__center"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-header__item sowp-navbar-header__item--highlight"</span>&gt;</span>Wspieraj nas<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-dropdown"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-dropdown__content"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-dropdown__list"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-dropdown__item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Lorem.<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-dropdown__item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Incidunt!<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-dropdown__item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Esse.<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-dropdown__item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Nisi.<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-dropdown__item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Similique.<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-dropdown__item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Iste!<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">hr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-dropdown__divider"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-dropdown__icons"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-dropdown__icons-item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-facebook"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-dropdown__icons-item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-facebook"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-navbar-dropdown__icons-item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-facebook"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div>
+
+<div class="ss-code-live"><div class="sowp-navbar">
+  <div class="sowp-navbar__header sowp-navbar-header">
+    <div class="sowp-navbar-header__left">
+      <a href="#" class="sowp-navbar-header__item">EN</a>
+    </div>
+    <div class="sowp-navbar-header__right">
+      <a href="#" class="sowp-navbar-header__item sowp-navbar__toggle">MENU</a>
+    </div>
+    <div class="sowp-navbar-header__center">
+      <a href="#" class="sowp-navbar-header__item sowp-navbar-header__item--highlight">Wspieraj nas</a>
+    </div>
+  </div>
+  <div class="sowp-navbar-dropdown">
+    <div class="sowp-navbar-dropdown__content">
+      <ul class="sowp-navbar-dropdown__list">
+        <li class="sowp-navbar-dropdown__item"><a href="#">Lorem.</a></li>
+        <li class="sowp-navbar-dropdown__item"><a href="#">Incidunt!</a></li>
+        <li class="sowp-navbar-dropdown__item"><a href="#">Esse.</a></li>
+        <li class="sowp-navbar-dropdown__item"><a href="#">Nisi.</a></li>
+        <li class="sowp-navbar-dropdown__item"><a href="#">Similique.</a></li>
+        <li class="sowp-navbar-dropdown__item"><a href="#">Iste!</a></li>
+      </ul>
+      <hr class="sowp-navbar-dropdown__divider" />
+      <ul class="sowp-navbar-dropdown__icons">
+        <li class="sowp-navbar-dropdown__icons-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li class="sowp-navbar-dropdown__icons-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li class="sowp-navbar-dropdown__icons-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</div></div>
+                </section>
+                <section class="ss-section" id="scroll-to-top">
+                    <h1>Scroll to top</h1><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-scroll-to-top"</span>&gt;</span>Do góry<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></code></pre></div>
+
+<div class="ss-code-live"><a href="#" class="sowp-scroll-to-top">Do góry</a></div><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-scroll-to-top pull-right"</span>&gt;</span>Do góry<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></code></pre></div>
+
+<div class="ss-code-live"><a href="#" class="sowp-scroll-to-top pull-right">Do góry</a></div><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-scroll-to-top center-block"</span>&gt;</span>Do góry<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></code></pre></div>
+
+<div class="ss-code-live"><a href="#" class="sowp-scroll-to-top center-block">Do góry</a></div><h1>Listy</h1><p>To jest niebezpieczny styl. Aktywuje się tylko wewnątrz <code>.sowp-content</code></p>
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-content"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Lorem.<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Voluptas!<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Quidem!<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Qui.<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Vero!<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div>
+
+<div class="ss-code-live"><div class="sowp-content">
+  <ul>
+    <li>Lorem.</li>
+    <li>Voluptas!</li>
+    <li>Quidem!</li>
+    <li>Qui.</li>
+    <li>Vero!</li>
+  </ul>
+</div></div>
+                </section>
+                <section class="ss-section" id="forms-checkbox-radio">
+                    <h1>Forms - checkbox/radio</h1><p>Do formularzy zalecam wykorzystanie Bootstrap 3, lecz z zastrzeżeneim dotyczącym pół typu <code>checkbox</code> i <code>radio</code>.</p>
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-checkbox"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"checkbox3"</span> <span class="hljs-attribute">checked</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"checkbox3"</span>&gt;</span>Check me out<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-checkbox"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"checkbox4"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"checkbox4"</span>&gt;</span>Check me out<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-radio"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"radio2"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"radio3"</span> <span class="hljs-attribute">checked</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"radio3"</span>&gt;</span>Check me out<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-radio"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"radio2"</span>  <span class="hljs-attribute">id</span>=<span class="hljs-value">"radio4"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"radio4"</span>&gt;</span>Check me out<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><div class="row">
+  <div class="col-xs-12 col-md-6">
+    <div class="sowp-checkbox" style="font-size: 36px">
+      <input type="checkbox" id="checkbox1">
+      <label for="checkbox1">Check me out</label>
+    </div>
+    <div class="sowp-checkbox" style="font-size: 36px">
+      <input type="checkbox" checked id="checkbox2">
+      <label for="checkbox2">Check me out</label>
+    </div>
+    <div class="sowp-checkbox">
+      <input type="checkbox" id="checkbox3" checked>
+      <label for="checkbox3">Check me out</label>
+    </div>
+    <div class="sowp-checkbox">
+      <input type="checkbox" id="checkbox4">
+      <label for="checkbox4">Check me out</label>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-6">
+    <div class="sowp-radio" style="font-size: 36px">
+      <input type="radio" name="radio1" id="radio1">
+      <label for="radio1">Check me out</label>
+    </div>
+    <div class="sowp-radio" style="font-size: 36px">
+      <input type="radio" name="radio1" checked id="radio2">
+      <label for="radio2">Check me out</label>
+    </div>
+    <div class="sowp-radio">
+      <input type="radio" name="radio2" id="radio3" checked>
+      <label for="radio3">Check me out</label>
+    </div>
+    <div class="sowp-radio">
+      <input type="radio" name="radio2"  id="radio4">
+      <label for="radio4">Check me out</label>
+    </div>
+  </div>
+</div>
+                </section>
+                <section class="ss-section" id="tabs">
+                    <h1>Tabs</h1><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card-tab sowp-card-tab--active"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__icon"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-bars"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__label"</span>&gt;</span>
+        15 minuts
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card-tab"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__icon"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-bars"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__label"</span>&gt;</span>
+        15 minuts
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card-tab"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__icon"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-bars"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__label"</span>&gt;</span>
+        15 minuts
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card-tab"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__icon"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-bars"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__label"</span>&gt;</span>
+        15 minuts
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div>
+
+<div class="ss-code-live"><div class="sowp-cards-tabs">
+  <div class="sowp-cards-tabs__item">
+    <div class="sowp-card-tab sowp-card-tab--active">
+      <div class="sowp-cards-tabs__icon">
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="sowp-cards-tabs__label">
+        15 minuts
+      </div>
+    </div>
+  </div>
+  <div class="sowp-cards-tabs__item">
+    <div class="sowp-card-tab">
+      <div class="sowp-cards-tabs__icon">
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="sowp-cards-tabs__label">
+        15 minuts
+      </div>
+    </div>
+  </div>
+  <div class="sowp-cards-tabs__item">
+    <div class="sowp-card-tab">
+      <div class="sowp-cards-tabs__icon">
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="sowp-cards-tabs__label">
+        15 minuts
+      </div>
+    </div>
+  </div>
+  <div class="sowp-cards-tabs__item">
+    <div class="sowp-card-tab">
+      <div class="sowp-cards-tabs__icon">
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="sowp-cards-tabs__label">
+        15 minuts
+      </div>
+    </div>
+  </div>
+</div></div>
+                </section>
+                <section class="ss-section" id="timer-selector">
+                    <h1>Timer Selector</h1><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card sowp-card--brand"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card__heading"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Lorem ipsum dolor.<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card__content"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-timer-selector"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-timer-selector__content"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-timer-selector__item"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-timer-selector__icon"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"isowp-clock-5min"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-timer-selector__label"</span>&gt;</span>Lorem.<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-timer-selector__item"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-timer-selector__icon"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"isowp-clock-5min"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-timer-selector__label"</span>&gt;</span>Totam!<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-timer-selector__item"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-timer-selector__icon"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"isowp-clock-1h"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-timer-selector__label"</span>&gt;</span>Expedita?<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-timer-selector__item"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-timer-selector__icon"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-question-circle-o"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-timer-selector__label"</span>&gt;</span>Iste.<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-timer-selector__indicator"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div>
+
+<div class="ss-code-live"><div class="sowp-card sowp-card--brand">
+  <div class="sowp-card__heading">
+    <h1>Lorem ipsum dolor.</h1>
+  </div>
+  <div class="sowp-card__content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!</p>
+  </div>
+  <div class="sowp-timer-selector">
+    <div class="sowp-timer-selector__content">
+      <a href="" class="sowp-timer-selector__item">
+        <div class="sowp-timer-selector__icon"><i class="isowp-clock-5min"></i></div>
+        <div class="sowp-timer-selector__label">Lorem.</div>
+      </a>
+      <a href="" class="sowp-timer-selector__item">
+        <div class="sowp-timer-selector__icon"><i class="isowp-clock-5min"></i></div>
+        <div class="sowp-timer-selector__label">Totam!</div>
+      </a>
+      <a href="" class="sowp-timer-selector__item">
+        <div class="sowp-timer-selector__icon"><i class="isowp-clock-1h"></i></div>
+        <div class="sowp-timer-selector__label">Expedita?</div>
+      </a>
+      <a href="" class="sowp-timer-selector__item">
+        <div class="sowp-timer-selector__icon"><i class="fa fa-question-circle-o"></i></div>
+        <div class="sowp-timer-selector__label">Iste.</div>
+      </a>
+    </div>
+    <div class="sowp-timer-selector__indicator"></div>
+  </div>
+</div></div>
+                </section>
+                <section class="ss-section" id="top-menu">
+                    <h1>Top menu</h1><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">nav</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-top-menu"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-top-menu-section sowp-top-menu-section--right"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Lorem.<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Lorem.<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Eligendi?<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Dolorem?<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Mollitia.<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Amet.<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    [..]
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-top-menu-section sowp-top-menu-section--left"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Praesentium.<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Neque!<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      [...]
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span></code></pre></div><nav class="sowp-top-menu">
+  <ul class="sowp-top-menu-section sowp-top-menu-section--right">
+    <li>
+      <a href="#">Lorem.</a>
+      <ul>
+        <li><a href="#">Lorem.</a></li>
+        <li><a href="#">Eligendi?</a></li>
+        <li><a href="#">Dolorem?</a></li>
+        <li><a href="#">Mollitia.</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Amet.</a>
+    </li>
+    <li>
+      <a href="#">Et.</a>
+      <ul>
+        <li><a href="">Lorem.</a></li>
+        <li><a href="#">Sed?</a></li>
+        <li><a href="#">Cupiditate!</a></li>
+        <li><a href="#">Nobis.</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Voluptate.</a>
+      <ul>
+        <li><a href="#">Lorem.</a></li>
+        <li><a href="#">Ut.</a></li>
+        <li><a href="#">At!</a></li>
+        <li><a href="#">Fuga.</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Voluptatum.</a>
+      <ul>
+        <li><a href="#">Lorem.</a></li>
+        <li><a href="#">Hic.</a></li>
+        <li><a href="#">Sed?</a></li>
+        <li><a href="#">Reiciendis.</a></li>
+      </ul>
+    </li>
+  </ul>
+  <ul class="sowp-top-menu-section sowp-top-menu-section--left">
+    <li>
+      <a href="">Praesentium.</a>
+    </li>
+    <li>
+      <a href="#">Neque!</a>
+      <ul>
+        <li><a href="#">Lorem.</a></li>
+        <li><a href="#">Cupiditate.</a></li>
+        <li><a href="#">Excepturi.</a></li>
+        <li><a href="#">Ut?</a></li>
+        <li><a href="#">Ipsum.</a></li>
+        <li><a href="#">Quam!</a></li>
+        <li><a href="#">Neque.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </section>
+                <section class="ss-section" id="vertical-menu">
+                    <h1>Vertical menu</h1><div class="ss-code"><pre><code class="html">.sowp-vertical-menu&gt;.sowp-vertical-menu__list&gt;ul.sowp-vertical-menu__list&gt;.sowp-vertical-menu__item*5&gt;a&gt;Lorem1</code></pre></div><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-vertical-menu"</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-vertical-menu__list"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-vertical-menu__list"</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-vertical-menu__item sowp-vertical-menu__item--active"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Lorem.<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-vertical-menu__item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Non?<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-vertical-menu__item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Rerum!<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-vertical-menu__item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Nobis!<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-vertical-menu__item"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Nisi!<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div>
+
+<div class="ss-code-live"><div class="sowp-vertical-menu">
+ <div class="sowp-vertical-menu__list">
+   <ul class="sowp-vertical-menu__list">
+     <li class="sowp-vertical-menu__item sowp-vertical-menu__item--active"><a href="#">Lorem.</a></li>
+     <li class="sowp-vertical-menu__item"><a href="#">Non?</a></li>
+     <li class="sowp-vertical-menu__item"><a href="#">Rerum!</a></li>
+     <li class="sowp-vertical-menu__item"><a href="#">Nobis!</a></li>
+     <li class="sowp-vertical-menu__item"><a href="#">Nisi!</a></li>
+   </ul>
+ </div>
+</div></div>
+                </section>
+                <section class="ss-section" id="icons">
+                    <h1>Icons</h1><table id="icon-table">
+<tr>
+  <td>
+    <div class="preview">
+      <i class="isowp-circle-left"></i>
+    </div>
+    <label></label>
+<code>&lt;i class=&quot;isowp-circle-left&quot;&gt;&lt;/i&gt;</code>
+  </td>
+  <td>
+    <div class="preview">
+      <i class="isowp-circle-right"></i>
+    </div>
+    <label></label>
+<code>&lt;i class=&quot;isowp-circle-right&quot;&gt;&lt;/i&gt;</code>
+  </td>
+  <td>
+    <div class="preview">
+      <i class="isowp-accessibility"></i>
+    </div>
+    <label></label>
+<code>&lt;i class=&quot;isowp-accessibility&quot;&gt;&lt;/i&gt;</code>
+  </td>
+  <td>
+    <div class="preview">
+      <i class="isowp-clock-more"></i>
+    </div>
+    <label></label>
+<code>&lt;i class=&quot;isowp-clock-more&quot;&gt;&lt;/i&gt;</code>
+  </td>
+</tr>
+<tr>
+  <td>
+    <div class="preview">
+      <i class="isowp-clock-15min"></i>
+    </div>
+    <label></label>
+<code>&lt;i class=&quot;isowp-clock-15min&quot;&gt;&lt;/i&gt;</code>
+  </td>
+  <td>
+    <div class="preview">
+      <i class="isowp-clock-5min"></i>
+    </div>
+    <label></label>
+<code>&lt;i class=&quot;isowp-clock-5min&quot;&gt;&lt;/i&gt;</code>
+  </td>
+  <td>
+    <div class="preview">
+      <i class="isowp-clock-1h"></i>
+    </div>
+    <label></label>
+<code>&lt;i class=&quot;isowp-clock-1h&quot;&gt;&lt;/i&gt;</code>
+  </td>
+  <td>
+    <div class="preview">
+      <i class="isowp-docs"></i>
+    </div>
+    <label></label>
+<code>&lt;i class=&quot;isowp-docs&quot;&gt;&lt;/i&gt;</code>
+  </td>
+</tr>
+<tr>
+  <td>
+    <div class="preview">
+      <i class="isowp-printer"></i>
+    </div>
+    <label></label>
+<code>&lt;i class=&quot;isowp-printer&quot;&gt;&lt;/i&gt;</code>
+  </td>
+  <td>
+    <div class="preview">
+      <i class="isowp-kreski"></i>
+    </div>
+    <label></label>
+<code>&lt;i class=&quot;isowp-kreski&quot;&gt;&lt;/i&gt;</code>
+  </td>
+  <td>
+    <div class="preview">
+      <i class="isowp-arrow"></i>
+    </div>
+    <label></label>
+<code>&lt;i class=&quot;isowp-arrow&quot;&gt;&lt;/i&gt;</code>
+  </td>
+</tr>
+</table>
+                </section>
+                <section class="ss-section" id="tabs-list">
+                    <h1>Tabs list</h1><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item is-expanded"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"tab-1"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item-heading"</span>&gt;</span>Lorem ipsum dolor.<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item-body"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>[...]<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"tab-2"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item-heading"</span>&gt;</span>Lorem ipsum dolor.<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item-body"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>[...]<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"tab-3"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item-heading"</span>&gt;</span>Ratione, officiis illo.<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item-body"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>[...]<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"tab-4"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item-heading"</span>&gt;</span>Eveniet, necessitatibus, rerum?<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item-body"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>[...]<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><div class="sowp-tabs-list">
+  <div class="sowp-tabs-list__item is-expanded" id="tab-1">
+    <div class="sowp-tabs-list__item-heading">Lorem ipsum dolor.</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium saepe, velit laudantium repellat. Optio animi aperiam molestias, eius deserunt, quis ex quaerat earum sunt maiores consequuntur quo porro dolores unde.</p>
+    </div>
+  </div>
+  <div class="sowp-tabs-list__item" id="tab-2">
+    <div class="sowp-tabs-list__item-heading">Lorem ipsum dolor.</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla culpa ipsa, maiores, totam expedita non. Eaque ratione porro debitis consectetur atque mollitia, quo doloremque reprehenderit adipisci itaque! Explicabo, fugit, repellendus.</p>
+      <p>Doloribus maxime molestiae debitis illum adipisci, consectetur minus ex facilis officiis vero, obcaecati modi. Quam non architecto, inventore quae saepe ipsam quis eveniet accusantium, eaque et pariatur sit perspiciatis, aperiam!</p>
+      <p>Est error accusamus cum repellendus quo eos voluptates delectus corrupti nobis, deserunt a blanditiis dolore sunt voluptatibus pariatur, enim obcaecati fugiat quae, dolores harum. Illum, aut similique eos minus dolores.</p>
+      <p>Veniam nesciunt similique voluptas nobis accusantium voluptates fugiat ad officiis! Magni unde vitae quos nulla laborum error, ipsa blanditiis in, enim ab neque voluptatibus sed id molestias veniam debitis aperiam?</p>
+      <p>Vitae explicabo veniam, dolore magnam numquam placeat harum, nihil provident aliquam sint aliquid consequuntur, nemo iure qui illum? Quibusdam eius delectus sapiente deleniti totam doloremque magnam dolor necessitatibus sint. Qui!</p>
+    </div>
+  </div>
+  <div class="sowp-tabs-list__item" id="tab-3">
+    <div class="sowp-tabs-list__item-heading">Ratione, officiis illo.</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic labore rem commodi odio debitis aperiam iure, ipsam animi delectus laboriosam, architecto, aut, cumque facilis corporis molestias? Hic provident sint dignissimos.</p>
+      <p>Voluptatem ut tempore magni facere? Laborum odio, quasi eligendi suscipit quod sunt, aliquam culpa veniam numquam quisquam quidem cumque, inventore optio nostrum voluptatibus rem, necessitatibus voluptate ab cum explicabo doloribus.</p>
+      <p>Quidem, tenetur, accusantium. Nulla dolorem ipsa minima earum facere doloribus soluta error a nobis, at ut qui ullam deserunt inventore quisquam dignissimos obcaecati dolores impedit quam rerum, facilis amet vitae!</p>
+      <p>Enim omnis, accusantium! Accusantium dolorem obcaecati, maiores, iste excepturi temporibus aut. Culpa animi alias earum cupiditate totam laborum consectetur debitis eligendi, harum eos mollitia, consequuntur nobis. Ut est laudantium unde.</p>
+      <p>Natus delectus vero similique corporis ullam aspernatur odio culpa numquam dicta! Labore aliquid voluptatum dolores, quidem reiciendis obcaecati illum sint. Quasi quos repellat labore reiciendis odit, ut voluptatibus perferendis consectetur!</p>
+    </div>
+  </div>
+  <div class="sowp-tabs-list__item" id="tab-4">
+    <div class="sowp-tabs-list__item-heading">Eveniet, necessitatibus, rerum?</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium rerum deleniti iste quae, provident quo quis, tempore magni, fugiat laborum consequuntur voluptatem ea laboriosam recusandae perspiciatis! Sunt asperiores quos earum!</p>
+      <p>Quisquam dolorem, debitis eos ut sit accusantium molestiae veniam adipisci veritatis doloribus nulla laborum, exercitationem tenetur esse porro dolore iste inventore nihil ducimus numquam quas eius. Earum, delectus dolorem alias!</p>
+      <p>Et sit blanditiis numquam tempora doloribus vitae, nulla, corrupti reprehenderit accusantium maiores. Cupiditate vel fugiat ullam nam autem voluptatibus iusto? Ut, deserunt, numquam! Debitis doloremque repellendus perspiciatis non libero quas?</p>
+      <p>Voluptatibus expedita totam quod eius voluptates, numquam eum illum sit autem harum sunt molestiae quaerat velit blanditiis impedit eaque tempora aliquam quidem cupiditate quas debitis iure ipsa, facere corrupti dignissimos?</p>
+      <p>Minima nulla beatae culpa accusamus est accusantium corporis reprehenderit nam doloribus id! Soluta tenetur cum id quisquam odio ad vel perferendis iusto itaque ut assumenda repellendus, ipsam cumque totam expedita!</p>
+    </div>
+  </div>
+</div>
+                </section>
+                <section class="ss-section" id="progress">
+                    <h1>Progress</h1><div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-progress"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"progressbar"</span> <span class="hljs-attribute">aria-valuenow</span>=<span class="hljs-value">"1000"</span> <span class="hljs-attribute">aria-valuemin</span>=<span class="hljs-value">"0"</span> <span class="hljs-attribute">aria-valuemax</span>=<span class="hljs-value">"4000"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 25%;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><div class="row">
+  <div class="col-xs">
+    <div class="col-md-6">
+      <div class="sowp-progress" role="progressbar" aria-valuenow="1000" aria-valuemin="0" aria-valuemax="4000">
+        <div style="width: 25%;"></div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="sowp-progress" role="progressbar" aria-valuenow="3000" aria-valuemin="0" aria-valuemax="4000">
+        <div style="width: 75%;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+                </section>
+                <section class="ss-section" id="-czenie-element-w">
+                    <h1>Łączenie elementów</h1><p>Elementy mogą być łączone, aby budować bardziej złożone elementy.</p>
+<div class="ss-code"><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Rzodkiewka pomarańczowa<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card-tab sowp-card-tab--active"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__icon"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-bars"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__label"</span>&gt;</span>
+        15 minuts
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card-tab"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__icon"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-bars"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__label"</span>&gt;</span>
+        15 minuts
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card-tab"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__icon"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-bars"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__label"</span>&gt;</span>
+        15 minuts
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-card-tab"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__icon"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-bars"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-cards-tabs__label"</span>&gt;</span>
+        15 minuts
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-bg sowp-bg--brand"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item is-expanded"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"tab-1"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item-heading"</span>&gt;</span>Lorem ipsum dolor.<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item-body"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"display: block;"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>[...]<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"tab-2"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item-heading"</span>&gt;</span>Lorem ipsum dolor.<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item-body"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>[...]<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"tab-3"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item-heading"</span>&gt;</span>Ratione, officiis illo.<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item-body"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>[...]<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"tab-4"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item-heading"</span>&gt;</span>Eveniet, necessitatibus, rerum?<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sowp-tabs-list__item-body"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>[...]<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+.</code></pre></div>
+
+<div class="ss-code-live"><h1>Rzodkiewka pomarańczowa</h1>
+<div class="sowp-cards-tabs">
+  <div class="sowp-cards-tabs__item">
+    <div class="sowp-card-tab sowp-card-tab--active">
+      <div class="sowp-cards-tabs__icon">
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="sowp-cards-tabs__label">
+        15 minuts
+      </div>
+    </div>
+  </div>
+  <div class="sowp-cards-tabs__item">
+    <div class="sowp-card-tab">
+      <div class="sowp-cards-tabs__icon">
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="sowp-cards-tabs__label">
+        15 minuts
+      </div>
+    </div>
+  </div>
+  <div class="sowp-cards-tabs__item">
+    <div class="sowp-card-tab">
+      <div class="sowp-cards-tabs__icon">
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="sowp-cards-tabs__label">
+        15 minuts
+      </div>
+    </div>
+  </div>
+  <div class="sowp-cards-tabs__item">
+    <div class="sowp-card-tab">
+      <div class="sowp-cards-tabs__icon">
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="sowp-cards-tabs__label">
+        15 minuts
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sowp-bg sowp-bg--brand">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!</p>
+</div>
+<div class="sowp-tabs-list">
+  <div class="sowp-tabs-list__item is-expanded" id="tab-1">
+    <div class="sowp-tabs-list__item-heading">Lorem ipsum dolor.</div>
+    <div class="sowp-tabs-list__item-body" style="display: block;">
+      <p>[...]</p>
+    </div>
+  </div>
+  <div class="sowp-tabs-list__item" id="tab-2">
+    <div class="sowp-tabs-list__item-heading">Lorem ipsum dolor.</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>[...]</p>
+    </div>
+  </div>
+  <div class="sowp-tabs-list__item" id="tab-3">
+    <div class="sowp-tabs-list__item-heading">Ratione, officiis illo.</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>[...]</p>
+    </div>
+  </div>
+  <div class="sowp-tabs-list__item" id="tab-4">
+    <div class="sowp-tabs-list__item-heading">Eveniet, necessitatibus, rerum?</div>
+    <div class="sowp-tabs-list__item-body">
+      <p>[...]</p>
+    </div>
+  </div>
+</div>
+.</div><h1>Variables</h1>
+                </section>
+                <section class="ss-section" id="mixins">
+                    <h1>Mixins</h1><h2>clearfix</h2><h2>fold</h2>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.1.0/masonry.pkgd.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/sowp-components.js" type="text/javascript" charset="utf-8" async defer></script>
+</body>
+
+</html>
