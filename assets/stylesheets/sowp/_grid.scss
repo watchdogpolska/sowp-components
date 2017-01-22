@@ -1,13 +1,14 @@
 // .sowp-grid {}
 
-.sowp-grid--to-3 {
-  .sowp-grid--item {
-    width: percentage(16 / 16);
-  }
+.sowp-grid--item {
+  width: percentage(16 / 16);
+}
 
-  .sowp-grid--gutter {
-    width: percentage(1 / 16);
-  }
+.sowp-grid--gutter {
+  width: percentage(1 / 16);
+}
+
+.sowp-grid--to-3 {
 
   @media(min-width: 600px) {
     .sowp-grid--item {
@@ -18,6 +19,14 @@
   @media(min-width: 900px) {
     .sowp-grid--item {
       width: percentage(((16 - 2) / 3) / 16);
+    }
+  }
+}
+
+.sowp-grid--to-2 {
+  @media(min-width: 900px) {
+    .sowp-grid--item {
+      width: percentage(((16 - 1) / 2) / 16);
     }
   }
 }

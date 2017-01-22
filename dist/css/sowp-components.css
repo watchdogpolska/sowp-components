@@ -251,10 +251,10 @@
 .sowp-radio-inline {
   display: inline-block; }
 
-.sowp-grid--to-3 .sowp-grid--item {
+.sowp-grid--item {
   width: 100%; }
 
-.sowp-grid--to-3 .sowp-grid--gutter {
+.sowp-grid--gutter {
   width: 6.25%; }
 
 @media (min-width: 600px) {
@@ -264,6 +264,10 @@
 @media (min-width: 900px) {
   .sowp-grid--to-3 .sowp-grid--item {
     width: 29.16667%; } }
+
+@media (min-width: 900px) {
+  .sowp-grid--to-2 .sowp-grid--item {
+    width: 46.875%; } }
 
 .sowp-navbar {
   position: relative; }
