@@ -1,4 +1,4 @@
-(function iife() {
+(function iife($) {
   $('.sowp-tabs-list').on(
     'click',
     '.sowp-tabs-list__item-heading',

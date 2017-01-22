@@ -123,6 +123,29 @@ W tym celu do ``bower.json`` należy dopisać
 
 
 # Masonry's Grid
+
+Moduł ten wymaga do działania trzech wtyczek:
+  * [jQuery](https://jquery.com/)
+  * [Masonry](http://masonry.desandro.com/)
+  * [imagesLoaded](http://imagesloaded.desandro.com/)
+
+Do szybkiego załadowania potrzebnych bibliotek możesz wykorzystać: 
+````
+<script
+        src="https://code.jquery.com/jquery-3.1.1.js"
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous"></script>
+<script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.1.1/masonry.pkgd.min.js" 
+        integrity="sha256-smfzbGDPGmErohy6T4GYOwE4m/195BPvF80A89X23j4=" 
+        crossorigin="anonymous"></script>
+<script 
+        src="https://unpkg.com/imagesloaded@4.1.1/imagesloaded.pkgd.min.js" 
+        integrity="sha384-Xe3wc6qrKm5s/0MutOWTCjDHtr0KgeBP8ctVRqs2D3elWg+cBjXYpH+7dazj34Eh" 
+        crossorigin="anonymous"></script>
+````
+
+
 ````html
 <div class="sowp-grid sowp-grid--to-3">
   <div class="sowp-grid--gutter"></div>
@@ -147,6 +170,7 @@ W tym celu do ``bower.json`` należy dopisać
   </div>
 </div>
 ````
+<div class="ss-code-live">
 <div class="sowp-grid sowp-grid--to-3">
   <div class="sowp-grid--gutter"></div>
   <div class="sowp-grid--item"></div>
@@ -251,7 +275,7 @@ W tym celu do ``bower.json`` należy dopisać
     </div>
   </div>
 </div>
-
+</div>
 
 
 

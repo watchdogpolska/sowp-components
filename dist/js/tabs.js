@@ -1,6 +1,6 @@
 'use strict';
 
-(function iife() {
+(function iife($) {
   $('.sowp-tabs-list').on('click', '.sowp-tabs-list__item-heading', function tabTitleClick() {
     var $tabTitle = $(this);
     var $tabCurrent = $tabTitle.closest('.sowp-tabs-list__item');

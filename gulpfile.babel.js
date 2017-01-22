@@ -4,7 +4,6 @@ import browserSync from 'browser-sync';
 import del from 'del';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import isCi from 'is-ci';
-import mainBowerFiles from 'main-bower-files';
 import merge from 'merge-stream';
 import octophant from 'octophant';
 import runSequence from 'run-sequence';
@@ -15,7 +14,6 @@ import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 
 const $ = gulpLoadPlugins();
-const bowerFiles = mainBowerFiles();
 const bs = browserSync.create();
 const reload = bs.stream;
 
@@ -45,7 +43,7 @@ gulp.task('scss:bootstrap', ['scss-settings', 'scss-lint'], () =>
       .pipe($.rename({ basename: 'sowp-bootstrap' }))
       .pipe($.if(!isCi, $.plumber()))
       .pipe($.sass({
-        includePaths: ['./bower_components'],
+        includePaths: ['./node_modules'],
       }))
       .pipe($.postcss([autoprefixer]))
       .pipe(gulp.dest('./dist/css/'))
@@ -80,11 +78,10 @@ gulp.task('server', () => {
   });
 });
 
-gulp.task('js', ['js-lint'], () => {
-  const vendor = gulp.src(bowerFiles);
-  const project = gulp.src('./assets/javascript/**/*.js');
+gulp.task('js', ['js:single', 'js:combined']);
 
-  const components = project
+gulp.task('js:single', ['js-lint'], () =>
+  gulp.src('./assets/javascript/**/*.js')
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.babel())
@@ -95,25 +92,24 @@ gulp.task('js', ['js-lint'], () => {
     .pipe($.rename({ extname: '.min.js' }))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('./dist/js/'))
-    .pipe(reload());
+    .pipe(reload())
+);
 
-  const full = merge(
-      vendor.pipe($.concat('vendor.js')),
-      project.pipe($.babel()).pipe($.concat('project.js'))
-    )
+gulp.task('js:combined', ['js-lint'], () =>
+  gulp.src('./assets/javascript/**/*.js')
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
+    .pipe($.babel())
     .pipe($.concat('sowp-components.js'))
     .pipe(gulp.dest('./dist/js/'))
     .pipe(reload())
+    .pipe($.sourcemaps.init())
     .pipe($.uglify())
     .pipe($.rename({ extname: '.min.js' }))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('./dist/js/'))
-    .pipe(reload());
-
-  return merge(components, full);
-});
+    .pipe(reload())
+);
 
 gulp.task('js-lint', () =>
   gulp.src('./assets/javascript/**/*.js')
@@ -171,7 +167,6 @@ gulp.task('watch', () => {
   gulp.watch('./assets/icons/**/*.svg', cb => runSequence('iconfont-gen', 'scss'));
   gulp.watch('./assets/javascript/**/*.js', ['js']);
   gulp.watch('./assets/styleguide/**/*', ['styleguide']);
-  gulp.watch('.bower.json', ['build']);
   gulp.watch('package.json', ['build']);
 });
 
