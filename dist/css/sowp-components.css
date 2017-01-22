@@ -135,6 +135,13 @@
   padding: 40px; }
   .sowp-card__heading + .sowp-card__content {
     padding-top: 0; }
+  .sowp-card__content h1:first-child,
+  .sowp-card__content h2:first-child,
+  .sowp-card__content h3:first-child,
+  .sowp-card__content h4:first-child,
+  .sowp-card__content h5:first-child,
+  .sowp-card__content h6:first-child {
+    margin-top: 0; }
 
 .sowp-card--brand {
   position: relative; }
