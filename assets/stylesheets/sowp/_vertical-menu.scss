@@ -12,12 +12,13 @@ $sowp-vertical-menu-item-active-color: #000 !default;
 $sowp-vertical-menu-item-active-color--hover: $sowp-color-brand !default;
 
 
-// .sowp-vertical-menu {}
+.sowp-vertical-menu {
+  margin: 35px 0 40px;
+}
 
 .sowp-vertical-menu__list {
   list-style: none;
   padding: 0;
-  margin: 0;
   display: none;
 
   @media(min-width: 600px) {
@@ -34,7 +35,8 @@ $sowp-vertical-menu-item-active-color--hover: $sowp-color-brand !default;
     text-decoration: none;
     color: $sowp-vertical-menu-item-color;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: $sowp-vertical-menu-item-color--hover;
       text-decoration: none;
     }
