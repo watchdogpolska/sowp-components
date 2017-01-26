@@ -13,7 +13,7 @@ $sowp-bg-padding: 40px !default;
   background: $sowp-color-brand;
   color: $sowp-color-brand--text;
 
-  a {
+  a:not(.btn) {
     color: $sowp-color-brand--link;
     text-decoration: underline;
 
@@ -29,7 +29,7 @@ $sowp-bg-padding: 40px !default;
   background: $sowp-color-light;
   color: $sowp-color-light--text;
 
-  a {
+  a:not(.btn) {
     color: $sowp-color-light--link;
     text-decoration: none;
 
@@ -45,7 +45,7 @@ $sowp-bg-padding: 40px !default;
   background: $sowp-color-medium;
   color: $sowp-color-medium--text;
 
-  a {
+  a:not(.btn) {
     color: $sowp-color-medium--link;
     text-decoration: none;
 
@@ -61,7 +61,7 @@ $sowp-bg-padding: 40px !default;
   background: $sowp-color-dark;
   color: $sowp-color-dark--text;
 
-  a {
+  a:not(.btn) {
     color: $sowp-color-dark--link;
     text-decoration: underline;
 

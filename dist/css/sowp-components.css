@@ -20,40 +20,40 @@
 .sowp-bg--brand, .sowp-card--brand {
   background: #d72626;
   color: #fff; }
-  .sowp-bg--brand a, .sowp-card--brand a {
+  .sowp-bg--brand a:not(.btn), .sowp-card--brand a:not(.btn) {
     color: #fff;
     text-decoration: underline; }
-    .sowp-bg--brand a:hover, .sowp-card--brand a:hover, .sowp-bg--brand a:focus, .sowp-card--brand a:focus {
+    .sowp-bg--brand a:not(.btn):hover, .sowp-card--brand a:not(.btn):hover, .sowp-bg--brand a:not(.btn):focus, .sowp-card--brand a:not(.btn):focus {
       color: #e6e6e6;
       text-decoration: underline; }
 
 .sowp-bg--light, .sowp-card--light {
   background: #f0f0f0;
   color: #4c4c4c; }
-  .sowp-bg--light a, .sowp-card--light a {
+  .sowp-bg--light a:not(.btn), .sowp-card--light a:not(.btn) {
     color: #d72626;
     text-decoration: none; }
-    .sowp-bg--light a:hover, .sowp-card--light a:hover, .sowp-bg--light a:focus, .sowp-card--light a:focus {
+    .sowp-bg--light a:not(.btn):hover, .sowp-card--light a:not(.btn):hover, .sowp-bg--light a:not(.btn):focus, .sowp-card--light a:not(.btn):focus {
       color: #d72626;
       text-decoration: underline; }
 
 .sowp-bg--medium, .sowp-card--medium {
   background: #d9d9d9;
   color: #4c4c4c; }
-  .sowp-bg--medium a, .sowp-card--medium a {
+  .sowp-bg--medium a:not(.btn), .sowp-card--medium a:not(.btn) {
     color: #d72626;
     text-decoration: none; }
-    .sowp-bg--medium a:hover, .sowp-card--medium a:hover, .sowp-bg--medium a:focus, .sowp-card--medium a:focus {
+    .sowp-bg--medium a:not(.btn):hover, .sowp-card--medium a:not(.btn):hover, .sowp-bg--medium a:not(.btn):focus, .sowp-card--medium a:not(.btn):focus {
       color: #d72626;
       text-decoration: underline; }
 
 .sowp-bg--dark, .sowp-card--dark {
   background: #4c4c4c;
   color: #fff; }
-  .sowp-bg--dark a, .sowp-card--dark a {
+  .sowp-bg--dark a:not(.btn), .sowp-card--dark a:not(.btn) {
     color: #fff;
     text-decoration: underline; }
-    .sowp-bg--dark a:hover, .sowp-card--dark a:hover, .sowp-bg--dark a:focus, .sowp-card--dark a:focus {
+    .sowp-bg--dark a:not(.btn):hover, .sowp-card--dark a:not(.btn):hover, .sowp-bg--dark a:not(.btn):focus, .sowp-card--dark a:not(.btn):focus {
       color: #d72626;
       text-decoration: underline; }
 
@@ -63,40 +63,40 @@
 .sowp-bg--brand, .sowp-card--brand {
   background: #d72626;
   color: #fff; }
-  .sowp-bg--brand a, .sowp-card--brand a {
+  .sowp-bg--brand a:not(.btn), .sowp-card--brand a:not(.btn) {
     color: #fff;
     text-decoration: underline; }
-    .sowp-bg--brand a:hover, .sowp-card--brand a:hover, .sowp-bg--brand a:focus, .sowp-card--brand a:focus {
+    .sowp-bg--brand a:not(.btn):hover, .sowp-card--brand a:not(.btn):hover, .sowp-bg--brand a:not(.btn):focus, .sowp-card--brand a:not(.btn):focus {
       color: #e6e6e6;
       text-decoration: underline; }
 
 .sowp-bg--light, .sowp-card--light {
   background: #f0f0f0;
   color: #4c4c4c; }
-  .sowp-bg--light a, .sowp-card--light a {
+  .sowp-bg--light a:not(.btn), .sowp-card--light a:not(.btn) {
     color: #d72626;
     text-decoration: none; }
-    .sowp-bg--light a:hover, .sowp-card--light a:hover, .sowp-bg--light a:focus, .sowp-card--light a:focus {
+    .sowp-bg--light a:not(.btn):hover, .sowp-card--light a:not(.btn):hover, .sowp-bg--light a:not(.btn):focus, .sowp-card--light a:not(.btn):focus {
       color: #d72626;
       text-decoration: underline; }
 
 .sowp-bg--medium, .sowp-card--medium {
   background: #d9d9d9;
   color: #4c4c4c; }
-  .sowp-bg--medium a, .sowp-card--medium a {
+  .sowp-bg--medium a:not(.btn), .sowp-card--medium a:not(.btn) {
     color: #d72626;
     text-decoration: none; }
-    .sowp-bg--medium a:hover, .sowp-card--medium a:hover, .sowp-bg--medium a:focus, .sowp-card--medium a:focus {
+    .sowp-bg--medium a:not(.btn):hover, .sowp-card--medium a:not(.btn):hover, .sowp-bg--medium a:not(.btn):focus, .sowp-card--medium a:not(.btn):focus {
       color: #d72626;
       text-decoration: underline; }
 
 .sowp-bg--dark, .sowp-card--dark {
   background: #4c4c4c;
   color: #fff; }
-  .sowp-bg--dark a, .sowp-card--dark a {
+  .sowp-bg--dark a:not(.btn), .sowp-card--dark a:not(.btn) {
     color: #fff;
     text-decoration: underline; }
-    .sowp-bg--dark a:hover, .sowp-card--dark a:hover, .sowp-bg--dark a:focus, .sowp-card--dark a:focus {
+    .sowp-bg--dark a:not(.btn):hover, .sowp-card--dark a:not(.btn):hover, .sowp-bg--dark a:not(.btn):focus, .sowp-card--dark a:not(.btn):focus {
       color: #d72626;
       text-decoration: underline; }
 
