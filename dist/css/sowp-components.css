@@ -473,10 +473,12 @@ a.sowp-timer-selector__item {
     border-right: 20px solid transparent;
     border-bottom: 20px solid #fff; }
 
+.sowp-vertical-menu {
+  margin: 35px 0 40px; }
+
 .sowp-vertical-menu__list {
   list-style: none;
   padding: 0;
-  margin: 10px 0 15px;
   display: none; }
   @media (min-width: 600px) {
     .sowp-vertical-menu__list {
@@ -538,7 +540,8 @@ a.sowp-timer-selector__item {
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  margin-top: 80px; }
+  margin-top: 80px;
+  margin-bottom: 40px; }
   .sowp-scroll-to-top::after {
     content: "";
     position: absolute;
