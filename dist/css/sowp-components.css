@@ -542,7 +542,7 @@ a.sowp-timer-selector__item {
   .sowp-scroll-to-top::after {
     content: "";
     position: absolute;
-    top: -20px;
+    top: -18px;
     left: 0;
     right: 0;
     margin-left: auto;

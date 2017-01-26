@@ -18,11 +18,12 @@ $swop-scrol-to-top-color: $sowp-color-brand--text !default;
   text-align: center;
   text-decoration: none;
   margin-top: 80px;
+  margin-bottom: 40px;
 
   &::after {
     content: "";
     position: absolute;
-    top: -20px;
+    top: -18px;
     left: 0;
     right: 0;
     margin-left: auto;
