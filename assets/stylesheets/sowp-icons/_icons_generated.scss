@@ -33,32 +33,44 @@
 	@if $filename == arrow {
 		$char: "\E002";
 	}
-	@if $filename == circle-left {
+	@if $filename == circle-facebook {
 		$char: "\E003";
 	}
-	@if $filename == circle-right {
+	@if $filename == circle-instagram {
 		$char: "\E004";
 	}
-	@if $filename == clock-15min {
+	@if $filename == circle-left {
 		$char: "\E005";
 	}
-	@if $filename == clock-1h {
+	@if $filename == circle-right {
 		$char: "\E006";
 	}
-	@if $filename == clock-5min {
+	@if $filename == circle-twitter {
 		$char: "\E007";
 	}
-	@if $filename == clock-more {
+	@if $filename == circle-youtube {
 		$char: "\E008";
 	}
-	@if $filename == docs {
+	@if $filename == clock-15min {
 		$char: "\E009";
 	}
-	@if $filename == kreski {
+	@if $filename == clock-1h {
 		$char: "\E00A";
 	}
-	@if $filename == printer {
+	@if $filename == clock-5min {
 		$char: "\E00B";
+	}
+	@if $filename == clock-more {
+		$char: "\E00C";
+	}
+	@if $filename == docs {
+		$char: "\E00D";
+	}
+	@if $filename == kreski {
+		$char: "\E00E";
+	}
+	@if $filename == printer {
+		$char: "\E00F";
 	}
 
 	@return $char;
@@ -81,11 +93,23 @@
 .isowp-arrow {
 	@include isowp(arrow);
 }
+.isowp-circle-facebook {
+	@include isowp(circle-facebook);
+}
+.isowp-circle-instagram {
+	@include isowp(circle-instagram);
+}
 .isowp-circle-left {
 	@include isowp(circle-left);
 }
 .isowp-circle-right {
 	@include isowp(circle-right);
+}
+.isowp-circle-twitter {
+	@include isowp(circle-twitter);
+}
+.isowp-circle-youtube {
+	@include isowp(circle-youtube);
 }
 .isowp-clock-15min {
 	@include isowp(clock-15min);

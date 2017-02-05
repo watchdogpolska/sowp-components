@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .sowp-content ul li {
   position: relative;
   list-style: none; }
@@ -719,51 +718,3 @@ a.sowp-timer-selector__item {
     background: #d82626;
     height: 100%;
     width: 30%; }
-
-@font-face {
-  font-family: "sowp";
-  src: url("../fonts/sowp.eot");
-  src: url("../fonts/sowp.eot?#iefix") format("eot"), url("../fonts/sowp.woff2") format("woff2"), url("../fonts/sowp.woff") format("woff"), url("../fonts/sowp.ttf") format("truetype"), url("../fonts/sowp.svg#sowp") format("svg"); }
-
-.isowp-accessibility:before, .isowp-arrow:before, .isowp-circle-left:before, .isowp-circle-right:before, .isowp-clock-15min:before, .isowp-clock-1h:before, .isowp-clock-5min:before, .isowp-clock-more:before, .isowp-docs:before, .isowp-kreski:before, .isowp-printer:before {
-  font-family: "sowp";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  text-decoration: none;
-  text-transform: none; }
-
-.isowp-accessibility:before {
-  content: ""; }
-
-.isowp-arrow:before {
-  content: ""; }
-
-.isowp-circle-left:before {
-  content: ""; }
-
-.isowp-circle-right:before {
-  content: ""; }
-
-.isowp-clock-15min:before {
-  content: ""; }
-
-.isowp-clock-1h:before {
-  content: ""; }
-
-.isowp-clock-5min:before {
-  content: ""; }
-
-.isowp-clock-more:before {
-  content: ""; }
-
-.isowp-docs:before {
-  content: ""; }
-
-.isowp-kreski:before {
-  content: ""; }
-
-.isowp-printer:before {
-  content: ""; }
