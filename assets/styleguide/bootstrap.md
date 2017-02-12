@@ -6,19 +6,17 @@
 
 ```html_example
 <h1>Lorem.</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, delectus!</p>
 <h2>Esse.</h2>
+<p>Fugit dolor quas nostrum sit commodi porro labore aperiam accusantium!</p>
 <h3>Neque.</h3>
+<p>Quae totam laboriosam, tempore aliquam nihil, ut perspiciatis vitae repellendus.</p>
 <h4>Dignissimos.</h4>
+<p>Vero ipsum quisquam expedita earum corrupti eveniet maiores necessitatibus nulla?</p>
 <h5>Dolore.</h5>
+<p>Quia, quibusdam magnam accusantium eligendi at nesciunt omnis, tenetur. Dolor.</p>
 <h6>Ullam!</h6>
-```
-```html_example
-<h1>Lorem.<small>Lorem.</small></h1>
-<h2>Esse.<small>Porro!</small></h2>
-<h3>Neque.<small>Fugit?</small></h3>
-<h4>Dignissimos.<small>Alias.</small></h4>
-<h5>Dolore.<small>Aspernatur?</small></h5>
-<h6>Ullam!<small>Fugit!</small></h6>
+<p>In dolores tempore doloribus. Quas sint iste cumque, suscipit officiis.</p>
 ```
 ## Cytat
 ```html_example
