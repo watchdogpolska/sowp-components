@@ -94,7 +94,26 @@ W tym celu do ``bower.json`` należy dopisać
 </div>
 ````
 
-
+# Z kartą w środku
+````html_example
+<div class="row">
+  <div class="col-md-6">
+    <div class="sowp-card sowp-card--brand">
+      <div class="sowp-card__content">
+        <h1>Kontakt</h1>
+      </div>
+      <div class="sowp-card__image">
+        <a href="http://google.com">
+          <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
+        </a>
+      </div>
+      <div class="sowp-card__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+      </div>
+    </div>
+  </div>
+</div>
+````
 
 
 # Bg

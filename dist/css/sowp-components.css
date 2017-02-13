@@ -141,6 +141,16 @@
   .sowp-card__content h5:first-child,
   .sowp-card__content h6:first-child {
     margin-top: 0; }
+  .sowp-card__content h1:first-child:last-child,
+  .sowp-card__content h2:first-child:last-child,
+  .sowp-card__content h3:first-child:last-child,
+  .sowp-card__content h4:first-child:last-child,
+  .sowp-card__content h5:first-child:last-child,
+  .sowp-card__content h6:first-child:last-child {
+    line-height: 1;
+    margin: 0; }
+  .sowp-card__content ~ .sowp-card__image {
+    margin-top: -25px; }
 
 .sowp-card--brand {
   position: relative; }
