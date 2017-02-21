@@ -1,0 +1,14 @@
+
+@mixin sowp-fold($color: $sowp-color-brand--accent, $background: $sowp-page-background) {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 20px solid $color;
+    border-top-color: $background;
+    border-right-color: $background;
+  }
+}

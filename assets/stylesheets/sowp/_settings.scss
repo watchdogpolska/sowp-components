@@ -3,7 +3,7 @@
 //
 //  Table of Contents:
 //
-//   1. Global
+//   1. Vertical Menu
 //   2. Colors
 //   3. Card
 //   4. Checkbox
@@ -12,13 +12,15 @@
 //   7. Scroll To Top
 //   8. Timer Selector
 //   9. Top Menu
-//  10. Vertical Menu
 
 
-// 1. Global
-// ---------
+// 1. Vertical Menu
+// ----------------
 
-$sowp-bg-padding: 40px;
+$sowp-vertical-menu-item-color: #000;
+$sowp-vertical-menu-item-color--hover: $sowp-color-brand;
+$sowp-vertical-menu-item-active-color: #000;
+$sowp-vertical-menu-item-active-color--hover: $sowp-color-brand;
 
 // 2. Colors
 // ---------
@@ -48,8 +50,6 @@ $sowp-color-dark--link-hover: $sowp-color-brand;
 // -------
 
 $sowp-card-padding: 40px;
-$sowp-card-margin-bottom: 40px;
-$sowp-card-divider: #fff;
 
 // 4. Checkbox
 // -----------
@@ -93,12 +93,4 @@ $sowp-top-menu-item-bg: $sowp-color-brand;
 $sowp-top-menu-item-bg--hover: $sowp-color-brand--accent;
 $sowp-top-menu-caret: #000;
 $sowp-top-menu-support-second-level: false;
-
-// 10. Vertical Menu
-// -----------------
-
-$sowp-vertical-menu-item-color: #000;
-$sowp-vertical-menu-item-color--hover: $sowp-color-brand;
-$sowp-vertical-menu-item-active-color: #000;
-$sowp-vertical-menu-item-active-color--hover: $sowp-color-brand;
 

@@ -6,14 +6,14 @@
   }
 }
 
-@mixin fold($color: $sowp-color-brand--accent, $background: $sowp-page-background, $top: 0, $right: 0) {
+@mixin sowp-fold($color: $sowp-color-brand--accent, $background: $sowp-page-background) {
   position: relative;
 
   &::before {
     content: "";
     position: absolute;
-    top: $top;
-    right: $right;
+    top: 0;
+    right: 0;
     border: 20px solid $color;
     border-top-color: $background;
     border-right-color: $background;
@@ -31,5 +31,22 @@
   background: $color;
   @if $round == true {
       border-radius: 1em;
+  }
+}
+
+@mixin heading {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    @content;
   }
 }

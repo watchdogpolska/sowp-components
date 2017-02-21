@@ -26,61 +26,59 @@ W tym celu do ``bower.json`` należy dopisać
 # Card
 
 ##  Style
-
+Obsługiwane są 4 podstawowe wersje kolorystyczne
 ```html_example
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-12">
     <div class="sowp-card sowp-card--brand">
       <div class="sowp-card__content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, commodi.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="sowp-card sowp-card--light">
+      <div class="sowp-card__content">
+        <p>Amet modi consequuntur impedit! Soluta vitae corporis laborum, ab repellendus.</p>
       </div>
     </div>
   </div>
   <div class="col-md-4">
-    <div class="sowp-card sowp-card--light">
+    <div class="sowp-card sowp-card--medium">
       <div class="sowp-card__content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, nisi provident voluptatum nobis dignissimos vel! Doloribus accusamus optio autem dolores adipisci consectetur harum maiores in. Possimus corporis similique vero, facilis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, ex.</p>
       </div>
     </div>
   </div>
   <div class="col-md-4">
     <div class="sowp-card sowp-card--dark">
       <div class="sowp-card__content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, nisi provident voluptatum nobis dignissimos vel! Doloribus accusamus optio autem dolores adipisci consectetur harum maiores in. Possimus corporis similique vero, facilis.</p>
+        <p>Odit nostrum est reprehenderit, neque fugit, aliquam perferendis saepe nihil!</p>
       </div>
     </div>
   </div>
 </div>
 ```
 
-## Z tytułem 
-
-````html_example
-<div class="sowp-card sowp-card--brand">
-  <div class="sowp-card__heading">
-   <h1>Lorem ipsum dolor.</h1>
-  </div>
-  <div class="sowp-card__content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!</p>
-  </div>
-</div>
-````
-
 ## Z obrazem nagłówkowym
 ````html_example
-<div class="sowp-card sowp-card--light">
-  <div class="sowp-card__image">
-    <a href="http://google.com">
-      <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
-    </a>
-  </div>
-  <div class="sowp-card__content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
-  </div>
-</div>
 <div class="row">
   <div class="col-md-6">
-    <div class="sowp-card sowp-card--brand">
+    <div class="sowp-card sowp-card--light">
+      <div class="sowp-card__image">
+        <a href="http://google.com">
+          <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
+        </a>
+      </div>
+      <div class="sowp-card__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="sowp-card sowp-card--dark">
       <div class="sowp-card__image">
         <a href="http://google.com">
           <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
@@ -94,17 +92,64 @@ W tym celu do ``bower.json`` należy dopisać
 </div>
 ````
 
-# Z kartą w środku
+# Z Obrazkiem w środku
 ````html_example
 <div class="row">
   <div class="col-md-6">
-    <div class="sowp-card sowp-card--brand">
+    <div class="sowp-card sowp-card--brand sowp-card--fold">
       <div class="sowp-card__content">
         <h1>Kontakt</h1>
       </div>
       <div class="sowp-card__image">
         <a href="http://google.com">
-          <img src="http://siecobywatelska.pl/wp-content/uploads/2015/08/Adam_Bodnar-400x130.jpg" alt="" />
+          <img src="http://lorempixel.com/400/230/business/" alt="" />
+        </a>
+      </div>
+      <div class="sowp-card__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="sowp-card sowp-card--light sowp-card--fold"">
+      <div class="sowp-card__content">
+        <h1>Kontakt</h1>
+      </div>
+      <div class="sowp-card__image">
+        <a href="http://google.com">
+          <img src="http://lorempixel.com/400/230/business/?2" alt="" />
+        </a>
+      </div>
+      <div class="sowp-card__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="sowp-card sowp-card--medium sowp-card--fold"">
+      <div class="sowp-card__content">
+        <h1>Kontakt</h1>
+      </div>
+      <div class="sowp-card__image">
+        <a href="http://google.com">
+          <img src="http://lorempixel.com/400/230/business/?2" alt="" />
+        </a>
+      </div>
+      <div class="sowp-card__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores eaque repellendus aliquid numquam asperiores. Nemo itaque ab amet, sed minima voluptate exercitationem, libero iusto, quae provident nostrum alias quas.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="sowp-card sowp-card--dark sowp-card--fold"">
+      <div class="sowp-card__content">
+        <h1>Kontakt</h1>
+      </div>
+      <div class="sowp-card__image">
+        <a href="http://google.com">
+          <img src="http://lorempixel.com/400/230/business/?3" alt="" />
         </a>
       </div>
       <div class="sowp-card__content">
@@ -114,29 +159,6 @@ W tym celu do ``bower.json`` należy dopisać
   </div>
 </div>
 ````
-
-
-# Bg
-
-```html_example
-<div class="row">
-  <div class="col-md-4">
-    <div class="sowp-bg sowp-bg--brand">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!</p>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="sowp-bg sowp-bg--light">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, nisi provident voluptatum nobis dignissimos vel! Doloribus accusamus optio autem dolores adipisci consectetur harum maiores in. Possimus corporis similique vero, facilis.</p>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="sowp-bg sowp-bg--dark">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, nisi provident voluptatum nobis dignissimos vel! Doloribus accusamus optio autem dolores adipisci consectetur harum maiores in. Possimus corporis similique vero, facilis.</p>
-    </div>
-  </div>
-</div>
-```
 
 
 
@@ -485,9 +507,6 @@ Do formularzy zalecam wykorzystanie Bootstrap 3, lecz z zastrzeżeneim dotycząc
 # Timer Selector
 ````html_example
 <div class="sowp-card sowp-card--brand">
-  <div class="sowp-card__heading">
-    <h1>Lorem ipsum dolor.</h1>
-  </div>
   <div class="sowp-card__content">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!</p>
   </div>

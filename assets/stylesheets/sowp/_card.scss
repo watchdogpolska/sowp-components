@@ -2,16 +2,12 @@
 /// @group Card
 ////
 
-/// Padding
-$sowp-card-padding: 40px;
-/// Margin under the card
-$sowp-card-margin-bottom: 40px;
-/// Card divider (default)
-$sowp-card-divider: #fff;
+/// Padding for bg, cards and other components
+$sowp-card-padding: 40px !default;
+$sowp-card-spacing: 40px;
 
 .sowp-card {
-  padding: 0;
-  margin-bottom: $sowp-card-margin-bottom;
+  margin-bottom: $sowp-card-spacing;
 }
 
 .sowp-card__image {
@@ -38,16 +34,6 @@ $sowp-card-divider: #fff;
     font-size: inherit;
     margin: 0;
   }
-
-  &::after {
-    content: "";
-    position: relative;
-    top: 20px;
-    display: block;
-    width: 50px;
-    height: 1px;
-    background: $sowp-card-divider;
-  }
 }
 
 .sowp-card__content {
@@ -57,47 +43,110 @@ $sowp-card-divider: #fff;
     padding-top: 0;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  @include heading {
     &:first-child {
       margin-top: 0;
     }
+
     &:first-child:last-child {
       line-height: 1;
       margin: 0;
     }
   }
 
-  & ~ .sowp-card__image {
+  ~ .sowp-card__image {
     margin-top: -25px;
   }
 }
 
+@mixin sowp-card-variant(
+  $bg,
+  $color,
+  $link-color,
+  $link-decoration,
+  $link-color--hover,
+  $link-color-decoration--hover,
+  $heading-color) {
+  background: $bg;
+  color: $color;
+
+  a:not(.btn) {
+    color: $link-color;
+    text-decoration: $link-decoration;
+
+    &:hover,
+    &:focus {
+      color: $link-color--hover;
+      text-decoration: $link-color-decoration--hover;
+    }
+  }
+
+  @include heading {
+    color: $heading-color;
+  }
+}
+
 .sowp-card--brand {
-  @include fold($sowp-color-brand--accent);
-  @extend .sowp-bg--brand;
+  @include sowp-card-variant(
+    $bg: $sowp-color-brand,
+    $color: $sowp-color-brand--text,
+    $link-color: $sowp-color-brand--link,
+    $link-decoration: underline,
+    $link-color--hover: $sowp-color-brand--link-hover,
+    $link-color-decoration--hover: underline,
+    $heading-color: inherit);
+
+  &.sowp-card--fold {
+    @include sowp-fold($sowp-color-brand--accent);
+  }
 }
 
 .sowp-card--light {
-  @include fold($sowp-color-light--accent);
-  @extend .sowp-bg--light;
+  @include sowp-card-variant(
+    $bg: $sowp-color-light,
+    $color: $sowp-color-light--text,
+    $link-color: $sowp-color-light--link,
+    $link-decoration: none,
+    $link-color--hover: $sowp-color-light--link-hover,
+    $link-color-decoration--hover: underline,
+    $heading-color: null);
+
+  &.sowp-card--fold {
+    @include sowp-fold($sowp-color-light--accent);
+  }
 }
 
 .sowp-card--medium {
-  @include fold($sowp-color-medium--accent);
-  @extend .sowp-bg--medium;
+  @include sowp-card-variant(
+    $bg: $sowp-color-medium,
+    $color: $sowp-color-medium--text,
+    $link-color: $sowp-color-medium--link,
+    $link-decoration: none,
+    $link-color--hover: $sowp-color-medium--link-hover,
+    $link-color-decoration--hover: underline,
+    $heading-color: null);
+
+  &.sowp-card--fold {
+    @include sowp-fold($sowp-color-medium--accent);
+  }
 }
 
 .sowp-card--dark {
-  @include fold($sowp-color-dark--accent);
-  @extend .sowp-bg--dark;
+  @include sowp-card-variant(
+    $bg: $sowp-color-dark,
+    $color: $sowp-color-dark--text,
+    $link-color: $sowp-color-dark--link,
+    $link-decoration: underline,
+    $link-color--hover: $sowp-color-dark--link-hover,
+    $link-color-decoration--hover: underline,
+    $heading-color: inherit);
+
+  &.sowp-card--fold {
+    @include sowp-fold($sowp-color-dark--accent);
+  }
 }
 
 
-.sowp-card--no-margin {
-  margin-bottom: 0;
+.sowp-card--no-spacing {
+  margin-bottom: $sowp-card-spacing;
 }
