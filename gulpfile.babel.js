@@ -158,7 +158,19 @@ gulp.task('server', () => {
 
 // Watch changes
 gulp.task('watch', () => {
-  gulp.watch('./assets/stylesheets/**/*.scss', ['scss']);
+  gulp.watch([
+    './assets/stylesheets/_sowp.scss',
+    './assets/stylesheets/sowp/**/*.scss',
+  ], ['scss:components']);
+  gulp.watch([
+    './assets/stylesheets/_sowp-bootstrap.scss',
+    './assets/stylesheets/sowp-bootstrap/**/*.scss',
+  ], ['scss:bootstrap']);
+  gulp.watch([
+    './assets/stylesheets/_sowp-icons.scss',
+    './assets/stylesheets/sowp-icons/**/*.scss',
+  ], ['scss:icons']);
+
   gulp.watch('./assets/icons/**/*.svg', () => runSequence(
     'iconfont-gen',
     'styleguide:icons',
