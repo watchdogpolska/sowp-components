@@ -111,6 +111,7 @@ gulp.task('iconfont-gen', () => {
       fontName,
       formats: ['svg', 'ttf', 'eot', 'woff', 'woff2'],
       normalize: true,
+      timestamp: 1487719633,
     }))
     .pipe(gulp.dest('./assets/fonts/'));
 });
