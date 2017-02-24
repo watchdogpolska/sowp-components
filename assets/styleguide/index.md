@@ -371,6 +371,12 @@ Do szybkiego załadowania potrzebnych bibliotek możesz wykorzystać:
 <a href="#" class="sowp-scroll-to-top center-block">Do góry</a>
 ````
 
+## Z płynnym przewijaniem
+
+````html_example
+<a href="#" class="sowp-scroll-to-top pull-right" data-smooth-scroll>Do góry</a>
+````
+
 # Listy
 To jest niebezpieczny styl. Aktywuje się tylko wewnątrz `.sowp-content `
 
@@ -796,8 +802,10 @@ Elementy mogą być łączone, aby budować bardziej złożone elementy.
     </div>
   </div>
 </div>
-<div class="sowp-bg sowp-bg--brand">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!</p>
+<div class="sowp-card sowp-card--brand sowp-card--no-spacing">
+  <div class="sowp-card__content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore a, possimus eius in ex et nisi deserunt excepturi provident sed aliquam ea voluptatibus qui officia quam doloribus modi quis incidunt!</p>
+  </div>
 </div>
 <div class="sowp-tabs-list">
   <div class="sowp-tabs-list__item is-expanded" id="tab-1">
