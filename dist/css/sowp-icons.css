@@ -4,7 +4,7 @@
   src: url("../fonts/sowp.eot");
   src: url("../fonts/sowp.eot?#iefix") format("eot"), url("../fonts/sowp.woff2") format("woff2"), url("../fonts/sowp.woff") format("woff"), url("../fonts/sowp.ttf") format("truetype"), url("../fonts/sowp.svg#sowp") format("svg"); }
 
-.isowp-accessibility:before, .isowp-arrow:before, .isowp-circle-facebook:before, .isowp-circle-instagram:before, .isowp-circle-left:before, .isowp-circle-right:before, .isowp-circle-twitter:before, .isowp-circle-youtube:before, .isowp-clock-15min:before, .isowp-clock-1h:before, .isowp-clock-5min:before, .isowp-clock-more:before, .isowp-docs:before, .isowp-kreski:before, .isowp-printer:before {
+.isowp {
   font-family: "sowp";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -38,23 +38,78 @@
 .isowp-circle-youtube:before {
   content: ""; }
 
-.isowp-clock-15min:before {
+.isowp-circle:before {
   content: ""; }
 
-.isowp-clock-1h:before {
+.isowp-clock-15min:before {
   content: ""; }
 
-.isowp-clock-5min:before {
+.isowp-clock-1h:before {
   content: ""; }
 
-.isowp-clock-more:before {
+.isowp-clock-5min:before {
   content: ""; }
 
-.isowp-docs:before {
+.isowp-clock-more:before {
   content: ""; }
 
-.isowp-kreski:before {
+.isowp-docs:before {
   content: ""; }
 
-.isowp-printer:before {
+.isowp-facebook:before {
   content: ""; }
+
+.isowp-instagram:before {
+  content: ""; }
+
+.isowp-kreski:before {
+  content: ""; }
+
+.isowp-left:before {
+  content: ""; }
+
+.isowp-printer:before {
+  content: ""; }
+
+.isowp-right:before {
+  content: ""; }
+
+.isowp-twitter:before {
+  content: ""; }
+
+.isowp-youtube:before {
+  content: ""; }
+
+.isowp-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  vertical-align: middle;
+  line-height: 2em; }
+
+.isowp-stack-item {
+  position: absolute;
+  text-align: center;
+  left: 0;
+  width: 100%; }
+
+.isowp-1x {
+  font-size: 1em;
+  vertical-align: middle; }
+
+.isowp-2x {
+  font-size: 2em;
+  vertical-align: middle; }
+
+.isowp-3x {
+  font-size: 3em;
+  vertical-align: middle; }
+
+.isowp-4x {
+  font-size: 4em;
+  vertical-align: middle; }
+
+.isowp-5x {
+  font-size: 5em;
+  vertical-align: middle; }

@@ -1,1 +1,24 @@
 @import "sowp-icons/icons_generated";
+
+.isowp-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  vertical-align: middle;
+  line-height: 2em;
+}
+
+.isowp-stack-item {
+  position: absolute;
+  text-align: center;
+  left: 0;
+  width: 100%;
+}
+
+@for $i from 1 through 5 {
+  .isowp-#{$i}x {
+    font-size: $i * 1em;
+    vertical-align: middle;
+  }
+}

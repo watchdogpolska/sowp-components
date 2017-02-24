@@ -5,11 +5,35 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   width="680"
-   height="661.42773"
-   viewBox="0 0 680.00002 661.42772"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="500"
+   height="500"
+   viewBox="0 0 500.00001 499.99999"
    id="svg2"
-   version="1.1">
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="printer.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1029"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="0.35680391"
+     inkscape:cx="-45.365735"
+     inkscape:cy="330.71387"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
   <defs
      id="defs4" />
   <metadata
@@ -26,6 +50,7 @@
   </metadata>
   <path
      id="rect4138"
-     d="m 111.42774,0 0,194.28515 -111.42774,0 0,340 108.57032,0 0,127.14258 462.85742,0 0,-127.14258 108.57226,0 0,-340 -105.71484,0 0,-194.28515 -462.85742,0 z m 58.89844,35.02539 350.61718,0 0,159.59375 -350.61718,0 0,-159.59375 z m -4.88868,374.23242 349.125,0 0,215.76953 -349.125,0 0,-215.76953 z m 95.85938,84.61133 0,40.83398 166.95703,0 0,-40.83398 -166.95703,0 z"
-     style="opacity:1;fill:#aa0000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14;stroke-dashoffset:0;stroke-opacity:1" />
+     d="m 81.932162,6.8280405 0,142.8567295 -81.932162,0 0,250 79.831118,0 0,93.48719 340.336342,0 0,-93.48719 79.83254,0 0,-250 -77.7315,0 0,-142.8567295 -340.336338,0 z m 43.307678,25.7539635 257.80675,0 0,117.348346 -257.80675,0 0,-117.348346 z m -3.59462,275.170896 256.70956,0 0,158.65407 -256.70956,0 0,-158.65407 z m 70.48484,62.21421 0,30.02499 122.76252,0 0,-30.02499 -122.76252,0 z"
+     style="opacity:1;fill:#aa0000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14;stroke-dashoffset:0;stroke-opacity:1"
+     inkscape:connector-curvature="0" />
 </svg>

@@ -1,134 +1,220 @@
 @font-face {
-	font-family: "sowp";
-	src: url('../fonts/sowp.eot');
-	src: url('../fonts/sowp.eot?#iefix') format('eot'),
-		url('../fonts/sowp.woff2') format('woff2'),
-		url('../fonts/sowp.woff') format('woff'),
-		url('../fonts/sowp.ttf') format('truetype'),
-		url('../fonts/sowp.svg#sowp') format('svg');
+  font-family: "sowp";
+  src: url('../fonts/sowp.eot');
+  src: url('../fonts/sowp.eot?#iefix') format('eot'),
+    url('../fonts/sowp.woff2') format('woff2'),
+    url('../fonts/sowp.woff') format('woff'),
+    url('../fonts/sowp.ttf') format('truetype'),
+    url('../fonts/sowp.svg#sowp') format('svg');
 }
 
 @mixin isowp-styles {
-	font-family: "sowp";
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
-	text-decoration: none;
-	text-transform: none;
+  font-family: "sowp";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+  text-decoration: none;
+  text-transform: none;
 }
 
-%isowp {
-	@include isowp-styles;
+.isowp {
+  @include isowp-styles;
 }
 
 @function isowp-char($filename) {
-	$char: "";
+  $char: "";
 
-	@if $filename == accessibility {
-		$char: "\E001";
-	}
-	@if $filename == arrow {
-		$char: "\E002";
-	}
-	@if $filename == circle-facebook {
-		$char: "\E003";
-	}
-	@if $filename == circle-instagram {
-		$char: "\E004";
-	}
-	@if $filename == circle-left {
-		$char: "\E005";
-	}
-	@if $filename == circle-right {
-		$char: "\E006";
-	}
-	@if $filename == circle-twitter {
-		$char: "\E007";
-	}
-	@if $filename == circle-youtube {
-		$char: "\E008";
-	}
-	@if $filename == clock-15min {
-		$char: "\E009";
-	}
-	@if $filename == clock-1h {
-		$char: "\E00A";
-	}
-	@if $filename == clock-5min {
-		$char: "\E00B";
-	}
-	@if $filename == clock-more {
-		$char: "\E00C";
-	}
-	@if $filename == docs {
-		$char: "\E00D";
-	}
-	@if $filename == kreski {
-		$char: "\E00E";
-	}
-	@if $filename == printer {
-		$char: "\E00F";
-	}
+  @if $filename == accessibility {
+    $char: "\E001";
+  }
+  @if $filename == arrow {
+    $char: "\E002";
+  }
+  @if $filename == circle-facebook {
+    $char: "\E003";
+  }
+  @if $filename == circle-instagram {
+    $char: "\E004";
+  }
+  @if $filename == circle-left {
+    $char: "\E005";
+  }
+  @if $filename == circle-right {
+    $char: "\E006";
+  }
+  @if $filename == circle-twitter {
+    $char: "\E007";
+  }
+  @if $filename == circle-youtube {
+    $char: "\E008";
+  }
+  @if $filename == circle {
+    $char: "\E009";
+  }
+  @if $filename == clock-15min {
+    $char: "\E00A";
+  }
+  @if $filename == clock-1h {
+    $char: "\E00B";
+  }
+  @if $filename == clock-5min {
+    $char: "\E00C";
+  }
+  @if $filename == clock-more {
+    $char: "\E00D";
+  }
+  @if $filename == docs {
+    $char: "\E00E";
+  }
+  @if $filename == facebook {
+    $char: "\E00F";
+  }
+  @if $filename == instagram {
+    $char: "\E010";
+  }
+  @if $filename == kreski {
+    $char: "\E011";
+  }
+  @if $filename == left {
+    $char: "\E012";
+  }
+  @if $filename == printer {
+    $char: "\E013";
+  }
+  @if $filename == right {
+    $char: "\E014";
+  }
+  @if $filename == twitter {
+    $char: "\E015";
+  }
+  @if $filename == youtube {
+    $char: "\E016";
+  }
 
-	@return $char;
+  @return $char;
 }
 
 @mixin isowp($filename, $insert: before, $extend: true) {
-	&:#{$insert} {
-		@if $extend {
-			@extend %isowp;
-		} @else {
-			@include isowp-styles;
-		}
-		content: isowp-char($filename);
-	}
+  &:#{$insert} {
+    @if $extend {
+      @extend .isowp;
+    } @else {
+      @include isowp-styles;
+    }
+    content: isowp-char($filename);
+  }
 }
 
 .isowp-accessibility {
-	@include isowp(accessibility);
+  &:before {
+    content: isowp-char(accessibility);
+  }
 }
 .isowp-arrow {
-	@include isowp(arrow);
+  &:before {
+    content: isowp-char(arrow);
+  }
 }
 .isowp-circle-facebook {
-	@include isowp(circle-facebook);
+  &:before {
+    content: isowp-char(circle-facebook);
+  }
 }
 .isowp-circle-instagram {
-	@include isowp(circle-instagram);
+  &:before {
+    content: isowp-char(circle-instagram);
+  }
 }
 .isowp-circle-left {
-	@include isowp(circle-left);
+  &:before {
+    content: isowp-char(circle-left);
+  }
 }
 .isowp-circle-right {
-	@include isowp(circle-right);
+  &:before {
+    content: isowp-char(circle-right);
+  }
 }
 .isowp-circle-twitter {
-	@include isowp(circle-twitter);
+  &:before {
+    content: isowp-char(circle-twitter);
+  }
 }
 .isowp-circle-youtube {
-	@include isowp(circle-youtube);
+  &:before {
+    content: isowp-char(circle-youtube);
+  }
+}
+.isowp-circle {
+  &:before {
+    content: isowp-char(circle);
+  }
 }
 .isowp-clock-15min {
-	@include isowp(clock-15min);
+  &:before {
+    content: isowp-char(clock-15min);
+  }
 }
 .isowp-clock-1h {
-	@include isowp(clock-1h);
+  &:before {
+    content: isowp-char(clock-1h);
+  }
 }
 .isowp-clock-5min {
-	@include isowp(clock-5min);
+  &:before {
+    content: isowp-char(clock-5min);
+  }
 }
 .isowp-clock-more {
-	@include isowp(clock-more);
+  &:before {
+    content: isowp-char(clock-more);
+  }
 }
 .isowp-docs {
-	@include isowp(docs);
+  &:before {
+    content: isowp-char(docs);
+  }
+}
+.isowp-facebook {
+  &:before {
+    content: isowp-char(facebook);
+  }
+}
+.isowp-instagram {
+  &:before {
+    content: isowp-char(instagram);
+  }
 }
 .isowp-kreski {
-	@include isowp(kreski);
+  &:before {
+    content: isowp-char(kreski);
+  }
+}
+.isowp-left {
+  &:before {
+    content: isowp-char(left);
+  }
 }
 .isowp-printer {
-	@include isowp(printer);
+  &:before {
+    content: isowp-char(printer);
+  }
+}
+.isowp-right {
+  &:before {
+    content: isowp-char(right);
+  }
+}
+.isowp-twitter {
+  &:before {
+    content: isowp-char(twitter);
+  }
+}
+.isowp-youtube {
+  &:before {
+    content: isowp-char(youtube);
+  }
 }
