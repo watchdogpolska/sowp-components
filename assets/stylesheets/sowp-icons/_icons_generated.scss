@@ -1,11 +1,12 @@
+
 @font-face {
   font-family: "sowp";
-  src: url('../fonts/sowp.eot');
-  src: url('../fonts/sowp.eot?#iefix') format('eot'),
-    url('../fonts/sowp.woff2') format('woff2'),
-    url('../fonts/sowp.woff') format('woff'),
-    url('../fonts/sowp.ttf') format('truetype'),
-    url('../fonts/sowp.svg#sowp') format('svg');
+  src: url('../fonts/sowp.eot?=32736');
+  src: url('../fonts/sowp.eot?=32736#iefix') format('eot'),
+    url('../fonts/sowp.woff2?=32736') format('woff2'),
+    url('../fonts/sowp.woff?=32736') format('woff'),
+    url('../fonts/sowp.ttf?=32736') format('truetype'),
+    url('../fonts/sowp.svg?=32736#sowp') format('svg');
 }
 
 @mixin isowp-styles {

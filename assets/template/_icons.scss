@@ -1,11 +1,12 @@
+<% var hash = _.chain(glyphs).join().map(function(a){return a.charCodeAt(0);}).sum()%>
 @font-face {
   font-family: "<%= fontName %>";
-  src: url('<%= fontPath %><%= fontName %>.eot');
-  src: url('<%= fontPath %><%= fontName %>.eot?#iefix') format('eot'),
-    url('<%= fontPath %><%= fontName %>.woff2') format('woff2'),
-    url('<%= fontPath %><%= fontName %>.woff') format('woff'),
-    url('<%= fontPath %><%= fontName %>.ttf') format('truetype'),
-    url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
+  src: url('<%= fontPath %><%= fontName %>.eot?=<%= hash %>');
+  src: url('<%= fontPath %><%= fontName %>.eot?=<%= hash %>#iefix') format('eot'),
+    url('<%= fontPath %><%= fontName %>.woff2?=<%= hash %>') format('woff2'),
+    url('<%= fontPath %><%= fontName %>.woff?=<%= hash %>') format('woff'),
+    url('<%= fontPath %><%= fontName %>.ttf?=<%= hash %>') format('truetype'),
+    url('<%= fontPath %><%= fontName %>.svg?=<%= hash %>#<%= fontName %>') format('svg');
 }
 
 @mixin <%= cssClass%>-styles {
