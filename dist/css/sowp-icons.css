@@ -12,7 +12,8 @@
   font-variant: normal;
   font-weight: normal;
   text-decoration: none;
-  text-transform: none; }
+  text-transform: none;
+  line-height: 1; }
 
 .isowp-accessibility:before {
   content: ""; }
@@ -93,6 +94,8 @@
   text-align: center;
   left: 0;
   width: 100%; }
+  .isowp-stack-item.isowp-1x {
+    line-height: inherit; }
 
 .isowp-1x {
   font-size: 1em;
